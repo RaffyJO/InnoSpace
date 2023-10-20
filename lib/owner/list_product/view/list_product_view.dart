@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
 
-import '../controller/list_product_controller.dart';
-
 class ListProductView extends StatefulWidget {
   ListProductView({Key? key}) : super(key: key);
 
@@ -13,11 +11,18 @@ class ListProductView extends StatefulWidget {
       appBar: AppBar(
         elevation: 2,
         backgroundColor: Colors.white,
-        title: const Center(
-          child: Text(
-            "List Product",
-            style: TextStyle(color: Colors.black, fontSize: 17),
-          ),
+        title: const Text(
+          "List Product",
+          style: TextStyle(color: Colors.black, fontSize: 17),
+        ),
+        centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          color: Colors.black, // Icon "back"
+          onPressed: () {
+            // Fungsi yang dipanggil saat tombol "back" ditekan
+            Navigator.of(context).pop();
+          },
         ),
       ),
       body: Stack(
@@ -225,9 +230,14 @@ class ListProductView extends StatefulWidget {
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromRGBO(255, 175, 0, 50),
-                  minimumSize: const Size(400, 40),
+                  minimumSize: const Size(350, 40),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AddProductView()),
+                  );
+                },
                 child: const Text(
                   "Add New Product",
                   style: TextStyle(color: Colors.black),

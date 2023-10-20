@@ -1,6 +1,6 @@
 {
     "modules": [
-        "done_page"
+        "list_space"
     ],
     "module_directory_name": "owner",
     "experimental_mode": false,

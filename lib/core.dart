@@ -23,6 +23,8 @@ export 'package:innospace/owner/done_page/controller/done_page_controller.dart';
 export 'package:innospace/owner/done_page/view/done_page_view.dart';
 export 'package:innospace/owner/list_product/controller/list_product_controller.dart';
 export 'package:innospace/owner/list_product/view/list_product_view.dart';
+export 'package:innospace/owner/list_space/controller/list_space_controller.dart';
+export 'package:innospace/owner/list_space/view/list_space_view.dart';
 export 'package:innospace/owner/owner_dashboard/controller/owner_dashboard_controller.dart';
 export 'package:innospace/owner/owner_dashboard/view/owner_dashboard_view.dart';
 export 'package:innospace/owner/status_booking/controller/status_booking_controller.dart';

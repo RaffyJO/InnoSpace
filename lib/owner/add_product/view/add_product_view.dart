@@ -16,11 +16,18 @@ class AddProductView extends StatefulWidget {
       appBar: AppBar(
         elevation: 2,
         backgroundColor: Colors.white,
-        title: const Center(
-          child: Text(
-            "Add Product",
-            style: TextStyle(color: Colors.black, fontSize: 17),
-          ),
+        title: const Text(
+          "Add Product",
+          style: TextStyle(color: Colors.black, fontSize: 17),
+        ),
+        centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          color: Colors.black, // Icon "back"
+          onPressed: () {
+            // Fungsi yang dipanggil saat tombol "back" ditekan
+            Navigator.of(context).pop();
+          },
         ),
       ),
       body: SingleChildScrollView(

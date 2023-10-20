@@ -2,21 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
 
 class StatusBookingView extends StatefulWidget {
-  StatusBookingView({Key? key}) : super(key: key);
+  final int initialTabIndex; // Tambahkan parameter int
+  StatusBookingView({Key? key, required this.initialTabIndex}) : super(key: key);
 
   Widget build(context, StatusBookingController controller) {
     controller.view = this;
 
     return DefaultTabController(
       length: _tabs.length,
+      initialIndex: initialTabIndex,
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
-          title: const Center(
-            child: Text(
-              "Order Status",
-              style: TextStyle(color: Colors.black, fontSize: 17),
-            ),
+          title: const Text(
+            "Order Status",
+            style: TextStyle(color: Colors.black, fontSize: 17),
+          ),
+          centerTitle: true,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            color: Colors.black, // Icon "back"
+            onPressed: () {
+              // Fungsi yang dipanggil saat tombol "back" ditekan
+              Navigator.of(context).pop();
+            },
           ),
           bottom: const TabBar(
             labelColor: Colors.black,
@@ -41,9 +50,7 @@ class StatusBookingView extends StatefulWidget {
     const CancelPageView(),
     const DonePageView(),
   ];
-
-  final int _currentIndex = 0;
-
+  
   @override
   State<StatusBookingView> createState() => StatusBookingController();
 }

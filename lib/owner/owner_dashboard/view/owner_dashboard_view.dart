@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
 
-import '../controller/owner_dashboard_controller.dart';
-
 class OwnerDashboardView extends StatefulWidget {
   OwnerDashboardView({Key? key}) : super(key: key);
 
@@ -62,7 +60,7 @@ class OwnerDashboardView extends StatefulWidget {
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 10,
-                              fontWeight: FontWeight.w400),
+                              fontWeight: FontWeight.w500),
                         ),
                       ),
                     )
@@ -79,7 +77,10 @@ class OwnerDashboardView extends StatefulWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text("Status Booking"),
+                  const Text(
+                    "Status Booking",
+                    style: TextStyle(fontWeight: FontWeight.w500),
+                  ),
                   const SizedBox(
                     height: 20,
                   ),
@@ -87,7 +88,16 @@ class OwnerDashboardView extends StatefulWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => StatusBookingView(
+                                initialTabIndex: 0,
+                              ),
+                            ),
+                          );
+                        },
                         child: Container(
                           height: 50,
                           width: 90,
@@ -105,7 +115,16 @@ class OwnerDashboardView extends StatefulWidget {
                         ),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => StatusBookingView(
+                                initialTabIndex: 1,
+                              ),
+                            ),
+                          );
+                        },
                         child: Container(
                           height: 50,
                           width: 90,
@@ -123,7 +142,16 @@ class OwnerDashboardView extends StatefulWidget {
                         ),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => StatusBookingView(
+                                initialTabIndex: 2,
+                              ),
+                            ),
+                          );
+                        },
                         child: Container(
                           height: 50,
                           width: 90,
@@ -157,10 +185,17 @@ class OwnerDashboardView extends StatefulWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text("Inventory"),
+                      const Text(
+                        "Inventory",
+                        style: TextStyle(fontWeight: FontWeight.w500),
+                      ),
                       TextButton(
                           onPressed: () {},
-                          child: const Text("Lihat Dashboard   >")),
+                          child: Text(
+                            "Lihat Dashboard   >",
+                            style: TextStyle(
+                                color: Colors.grey[600], fontSize: 13),
+                          )),
                     ],
                   ),
                   const SizedBox(
@@ -170,7 +205,13 @@ class OwnerDashboardView extends StatefulWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ListSpaceView()),
+                          );
+                        },
                         child: Container(
                           color: Colors.grey[300],
                           height: 150,
@@ -185,7 +226,13 @@ class OwnerDashboardView extends StatefulWidget {
                         ),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ListProductView()),
+                          );
+                        },
                         child: Container(
                           color: Colors.grey[300],
                           height: 150,
@@ -194,7 +241,7 @@ class OwnerDashboardView extends StatefulWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Text("Nanti ini gambar"),
-                              Text("Space"),
+                              Text("Product"),
                             ],
                           ),
                         ),
@@ -215,7 +262,10 @@ class OwnerDashboardView extends StatefulWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text("Information"),
+                  const Text(
+                    "Information",
+                    style: TextStyle(fontWeight: FontWeight.w500),
+                  ),
                   Padding(
                       padding: const EdgeInsets.only(top: 15, left: 10),
                       child: SizedBox(
