@@ -148,6 +148,32 @@ class PaymentView extends StatefulWidget {
                 style: TextStyle(fontWeight: FontWeight.w600),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
+              child: Container(
+                height: 30,
+                width: MediaQuery.of(context).size.width,
+                decoration: const BoxDecoration(color: Colors.grey),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ImageIcon(
+                      AssetImage(
+                        "assets/aset/logo-gopay1.png",
+                      ),
+                    ),
+                    Text("Gopay"),
+                  ],
+                ),
+              ),
+            ),
+            OutlinedButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                  side: MaterialStateProperty.all(BorderSide(
+                      color: isSelected ? Colors.blue : Colors.grey))),
+              child: const Text("Gopay"),
+            ),
             // Padding(
             //   padding: const EdgeInsets.all(8.0),
             //   child: ListView.builder(
@@ -169,6 +195,8 @@ class PaymentView extends StatefulWidget {
       ),
     );
   }
+
+  final bool isSelected = false;
 
   @override
   State<PaymentView> createState() => PaymentController();
