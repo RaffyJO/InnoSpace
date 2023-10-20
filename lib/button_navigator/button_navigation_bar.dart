@@ -25,8 +25,8 @@ class _FloatMainNavigationViewState extends State<FloatMainNavigationView> {
           index: selectedIndex,
           children: [
             DashboardView(),
-            BookingListView(),
-            PaymentView()
+            const BookingListView(),
+            OwnerDashboardView()
           ],
         ),
         bottomNavigationBar: BottomAppBar(
