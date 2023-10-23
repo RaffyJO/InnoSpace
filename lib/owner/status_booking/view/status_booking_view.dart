@@ -3,7 +3,8 @@ import 'package:innospace/core.dart';
 
 class StatusBookingView extends StatefulWidget {
   final int initialTabIndex; // Tambahkan parameter int
-  StatusBookingView({Key? key, required this.initialTabIndex}) : super(key: key);
+  StatusBookingView({Key? key, required this.initialTabIndex})
+      : super(key: key);
 
   Widget build(context, StatusBookingController controller) {
     controller.view = this;
@@ -50,7 +51,7 @@ class StatusBookingView extends StatefulWidget {
     const CancelPageView(),
     const DonePageView(),
   ];
-  
+
   @override
   State<StatusBookingView> createState() => StatusBookingController();
 }

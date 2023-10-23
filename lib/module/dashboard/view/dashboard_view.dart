@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
 
-import '../controller/dashboard_controller.dart';
-
 class DashboardView extends StatefulWidget {
   DashboardView({Key? key}) : super(key: key);
 
@@ -114,7 +112,13 @@ class DashboardView extends StatefulWidget {
                         ),
                         Expanded(
                           child: InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const InnocafeView()));
+                            },
                             child: const Expanded(
                               child: Column(children: <Widget>[
                                 SizedBox(height: 5),
