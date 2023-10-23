@@ -1,6 +1,6 @@
 {
     "modules": [
-        "list_space"
+        "innocafe_detail"
     ],
     "module_directory_name": "owner",
     "experimental_mode": false,

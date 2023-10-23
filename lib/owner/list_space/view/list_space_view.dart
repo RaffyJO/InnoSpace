@@ -136,8 +136,7 @@ class ListSpaceView extends StatefulWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => AddSpaceView()),
+                      MaterialPageRoute(builder: (context) => AddSpaceView()),
                     );
                   },
                   child: const Text(
