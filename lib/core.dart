@@ -9,8 +9,14 @@ export 'package:innospace/module/booking_information/view/booking_information_vi
 export 'package:innospace/module/booking_list/booking_list_view.dart';
 export 'package:innospace/module/dashboard/controller/dashboard_controller.dart';
 export 'package:innospace/module/dashboard/view/dashboard_view.dart';
+export 'package:innospace/module/edit_profile/controller/edit_profile_controller.dart';
+export 'package:innospace/module/edit_profile/view/edit_profile_view.dart';
+export 'package:innospace/module/history_booking/controller/history_booking_controller.dart';
+export 'package:innospace/module/history_booking/view/history_booking_view.dart';
 export 'package:innospace/module/payment/controller/payment_controller.dart';
 export 'package:innospace/module/payment/view/payment_view.dart';
+export 'package:innospace/module/user_profile/controller/user_profile_controller.dart';
+export 'package:innospace/module/user_profile/view/user_profile_view.dart';
 export 'package:innospace/owner/add_product/controller/add_product_controller.dart';
 export 'package:innospace/owner/add_product/view/add_product_view.dart';
 export 'package:innospace/owner/add_space/controller/add_space_controller.dart';

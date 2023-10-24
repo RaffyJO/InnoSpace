@@ -26,7 +26,7 @@ class _FloatMainNavigationViewState extends State<FloatMainNavigationView> {
           children: [
             DashboardView(),
             const BookingListView(),
-            OwnerDashboardView()
+            const UserProfileView()
           ],
         ),
         bottomNavigationBar: BottomAppBar(
