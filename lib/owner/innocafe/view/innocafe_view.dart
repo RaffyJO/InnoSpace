@@ -6,6 +6,7 @@ class InnocafeView extends StatefulWidget {
 
   Widget build(context, InnocafeController controller) {
     controller.view = this;
+    double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       appBar: AppBar(
@@ -27,7 +28,7 @@ class InnocafeView extends StatefulWidget {
                   children: [
                     SizedBox(
                       width: double.infinity,
-                      height: 215,
+                      height: screenWidth * 0.75, // 75% of the screen width
                       child: Stack(
                         children: [
                           SizedBox(
@@ -46,7 +47,7 @@ class InnocafeView extends StatefulWidget {
                     ),
                     Container(
                       padding: const EdgeInsets.all(10.0),
-                      child: const Column(
+                      child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
@@ -55,7 +56,8 @@ class InnocafeView extends StatefulWidget {
                               Text(
                                 "Piskip",
                                 style: TextStyle(
-                                  fontSize: 25.0,
+                                  fontSize: screenWidth *
+                                      0.06, // Adjust the font size
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -64,10 +66,11 @@ class InnocafeView extends StatefulWidget {
                                   Text(
                                     "Recently Book",
                                     style: TextStyle(
-                                      fontSize: 17.0,
+                                      fontSize: screenWidth *
+                                          0.03, // Adjust the font size
                                     ),
                                   ),
-                                  SizedBox(height: 10),
+                                  SizedBox(height: screenWidth * 0.01),
                                 ],
                               ),
                             ],
@@ -81,22 +84,24 @@ class InnocafeView extends StatefulWidget {
                                   Text(
                                     "Jl. Pisang Kipas No.6, Jatimulyo, ",
                                     style: TextStyle(
-                                      fontSize: 14.0,
+                                      fontSize: screenWidth *
+                                          0.03, // Adjust the font size
                                     ),
                                   ),
                                   Text(
                                     "Kec. Lowokwaru, Kota Malang, Jawa Timur 65141",
                                     style: TextStyle(
-                                      fontSize: 14.0,
+                                      fontSize: screenWidth *
+                                          0.03, // Adjust the font size
                                     ),
                                   ),
                                 ],
                               ),
                               Row(
                                 children: [
-                                  Icon(Icons.bookmark),
-                                  SizedBox(height: 5),
-                                  Text("0.7 km"),
+                                  const Icon(Icons.bookmark),
+                                  SizedBox(height: screenWidth * 0.01),
+                                  const Text("0.7 km"),
                                 ],
                               ),
                             ],
@@ -104,8 +109,8 @@ class InnocafeView extends StatefulWidget {
                         ],
                       ),
                     ),
-                    const SizedBox(
-                      height: 10,
+                    SizedBox(
+                      height: screenWidth * 0.02,
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
@@ -113,7 +118,8 @@ class InnocafeView extends StatefulWidget {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         backgroundColor: const Color.fromARGB(194, 255, 174, 0),
-                        fixedSize: const Size(330, 50),
+                        fixedSize: Size(screenWidth * 0.8,
+                            screenWidth * 0.1), // Adjust the button size
                       ),
                       onPressed: () {
                         Navigator.push(
@@ -125,10 +131,13 @@ class InnocafeView extends StatefulWidget {
                       },
                       child: Text(
                         "See More".toUpperCase(),
+                        style: TextStyle(
+                            fontSize:
+                                screenWidth * 0.04), // Adjust the font size
                       ),
                     ),
-                    const SizedBox(
-                      height: 10,
+                    SizedBox(
+                      height: screenWidth * 0.02,
                     ),
                   ],
                 ),
@@ -145,7 +154,7 @@ class InnocafeView extends StatefulWidget {
                   children: [
                     SizedBox(
                       width: double.infinity,
-                      height: 215,
+                      height: screenWidth * 0.75, // 75% of the screen width
                       child: Stack(
                         children: [
                           SizedBox(
@@ -164,7 +173,7 @@ class InnocafeView extends StatefulWidget {
                     ),
                     Container(
                       padding: const EdgeInsets.all(10.0),
-                      child: const Column(
+                      child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
@@ -173,7 +182,8 @@ class InnocafeView extends StatefulWidget {
                               Text(
                                 "Nakoa Cafe Suhat",
                                 style: TextStyle(
-                                  fontSize: 25.0,
+                                  fontSize: screenWidth *
+                                      0.06, // Adjust the font size
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -182,10 +192,11 @@ class InnocafeView extends StatefulWidget {
                                   Text(
                                     "Recently Book",
                                     style: TextStyle(
-                                      fontSize: 17.0,
+                                      fontSize: screenWidth *
+                                          0.03, // Adjust the font size
                                     ),
                                   ),
-                                  SizedBox(height: 10),
+                                  SizedBox(height: screenWidth * 0.01),
                                 ],
                               ),
                             ],
@@ -199,28 +210,31 @@ class InnocafeView extends StatefulWidget {
                                   Text(
                                     "Jl. Puncak Borobudur G502, Griya Shanta Blk.J",
                                     style: TextStyle(
-                                      fontSize: 14.0,
+                                      fontSize: screenWidth *
+                                          0.03, // Adjust the font size
                                     ),
                                   ),
                                   Text(
                                     "No.216, Mojolangu, Kec. Lowokwaru, ",
                                     style: TextStyle(
-                                      fontSize: 14.0,
+                                      fontSize: screenWidth *
+                                          0.03, // Adjust the font size
                                     ),
                                   ),
                                   Text(
                                     "Kota Malang, Jawa Timur",
                                     style: TextStyle(
-                                      fontSize: 14.0,
+                                      fontSize: screenWidth *
+                                          0.03, // Adjust the font size
                                     ),
                                   ),
                                 ],
                               ),
                               Row(
                                 children: [
-                                  Icon(Icons.bookmark),
-                                  SizedBox(height: 5),
-                                  Text("2,1 km"),
+                                  const Icon(Icons.bookmark),
+                                  SizedBox(height: screenWidth * 0.01),
+                                  const Text("2.1 km"),
                                 ],
                               ),
                             ],
@@ -228,8 +242,8 @@ class InnocafeView extends StatefulWidget {
                         ],
                       ),
                     ),
-                    const SizedBox(
-                      height: 10,
+                    SizedBox(
+                      height: screenWidth * 0.02,
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
@@ -237,7 +251,8 @@ class InnocafeView extends StatefulWidget {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         backgroundColor: const Color.fromARGB(194, 255, 174, 0),
-                        fixedSize: const Size(330, 50),
+                        fixedSize: Size(screenWidth * 0.8,
+                            screenWidth * 0.1), // Adjust the button size
                       ),
                       onPressed: () {
                         Navigator.push(
@@ -249,15 +264,18 @@ class InnocafeView extends StatefulWidget {
                       },
                       child: Text(
                         "See More".toUpperCase(),
+                        style: TextStyle(
+                            fontSize:
+                                screenWidth * 0.04), // Adjust the font size
                       ),
                     ),
-                    const SizedBox(
-                      height: 10,
+                    SizedBox(
+                      height: screenWidth * 0.02,
                     ),
                   ],
                 ),
               ),
-            ),
+            )
           ],
         ),
       ),

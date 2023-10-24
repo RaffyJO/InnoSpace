@@ -6,6 +6,7 @@ class DashboardView extends StatefulWidget {
 
   Widget build(context, DashboardController controller) {
     controller.view = this;
+    double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -207,46 +208,166 @@ class DashboardView extends StatefulWidget {
                               fit: BoxFit.cover,
                             ),
                           ));
-                      // Row(children: [
-                      //   Container(
-                      //     width: 300,
-                      //     padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                      //     margin: const EdgeInsets.only(right: 10.0),
-                      //     decoration: BoxDecoration(
-                      //       color: Colors.grey[100],
-                      //       borderRadius: const BorderRadius.all(
-                      //         Radius.circular(16.0),
-                      //       ),
-                      //     ),
-                      //     child: Padding(
-                      //       padding: const EdgeInsets.all(12.0),
-                      //       child: Column(
-                      //         crossAxisAlignment: CrossAxisAlignment.start,
-                      //         children: [
-                      //           Image.asset(
-                      //             imageUrls[index],
-                      //           ),
-                      //           const SizedBox(
-                      //             height: 9,
-                      //           ),
-                      //           const Text(
-                      //             "0",
-                      //             style: TextStyle(
-                      //               fontWeight: FontWeight.bold,
-                      //               color: Colors.black,
-                      //               fontSize: 15.0,
-                      //             ),
-                      //           ),
-                      //         ],
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ]);
                     },
                   )),
             ),
             const SizedBox(
               height: 10,
+            ),
+            SizedBox(
+              width: screenWidth,
+              height: 420,
+              child: ListView.builder(
+                itemCount: 3,
+                scrollDirection: Axis.horizontal,
+                shrinkWrap: true,
+                padding: EdgeInsets.zero,
+                itemBuilder: (context, index) {
+                  var item = {};
+                  return Container(
+                    width: screenWidth * 0.8,
+                    padding: const EdgeInsets.all(10.0),
+                    child: Card(
+                      color: Colors.grey[300],
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0),
+                      ),
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            width: double.infinity,
+                            height: screenWidth * 0.55,
+                            child: Stack(
+                              children: [
+                                SizedBox(
+                                  width: double.infinity,
+                                  height: double.infinity,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(16.0),
+                                    child: Image.network(
+                                      "https://cdns.klimg.com/merdeka.com/i/w/news/2022/05/07/1433082/content_images/670x335/20220507200741-12-nakoa-cafe-001-tantri-setyorini.jpg",
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "Nakoa Cafe Suhat",
+                                      style: TextStyle(
+                                        fontSize: screenWidth *
+                                            0.06, // Adjust the font size
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Column(
+                                      children: [
+                                        Text(
+                                          "Recently Book",
+                                          style: TextStyle(
+                                            fontSize: screenWidth *
+                                                0.03, // Adjust the font size
+                                          ),
+                                        ),
+                                        SizedBox(height: screenWidth * 0.01),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Jl. Puncak Borobudur G502, Griya Shanta Blk.J",
+                                          style: TextStyle(
+                                            fontSize: screenWidth *
+                                                0.025, // Adjust the font size
+                                          ),
+                                        ),
+                                        Text(
+                                          "No.216, Mojolangu, Kec. Lowokwaru, ",
+                                          style: TextStyle(
+                                            fontSize: screenWidth *
+                                                0.03, // Adjust the font size
+                                          ),
+                                        ),
+                                        Text(
+                                          "Kota Malang, Jawa Timur",
+                                          style: TextStyle(
+                                            fontSize: screenWidth *
+                                                0.03, // Adjust the font size
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        const Icon(Icons.bookmark),
+                                        SizedBox(height: screenWidth * 0.01),
+                                        const Text("2.1 km"),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            height: screenWidth * 0.02,
+                          ),
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              backgroundColor:
+                                  const Color.fromARGB(194, 255, 174, 0),
+                              fixedSize:
+                                  Size(screenWidth * 0.6, screenWidth * 0.1),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const InnocafeDetailView(),
+                                ),
+                              );
+                            },
+                            child: Text(
+                              "See More".toUpperCase(),
+                              style: TextStyle(
+                                  fontSize: screenWidth *
+                                      0.04), // Adjust the font size
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          )
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+            const SizedBox(
+              height: 50,
             ),
           ],
         ),
