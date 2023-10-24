@@ -1,53 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
 
-class BookingListView extends StatefulWidget {
-  const BookingListView({super.key});
+import '../controller/history_booking_controller.dart';
 
-  @override
-  State<BookingListView> createState() => _BookingListViewState();
-}
+class HistoryBookingView extends StatefulWidget {
+  const HistoryBookingView({Key? key}) : super(key: key);
 
-class _BookingListViewState extends State<BookingListView> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(context, HistoryBookingController controller) {
+    controller.view = this;
+
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          color: Colors.black, // Icon "back"
+          onPressed: () {
+            // Fungsi yang dipanggil saat tombol "back" ditekan
+            Navigator.of(context).pop();
+          },
+        ),
         elevation: 2,
         backgroundColor: Colors.white,
         title: const Text(
-          "Booking List",
+          "History",
           style: TextStyle(color: Colors.black, fontSize: 17),
         ),
         centerTitle: true,
-        actions: [
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const HistoryBookingView()));
-            },
-            child: const ImageIcon(
-              AssetImage(
-                "assets/aset/History.png",
-              ),
-              color: Colors.black,
-            ),
-          ),
-          const SizedBox(
-            width: 15,
-          )
-        ],
       ),
       body: ListView.builder(
-          itemCount: 3,
+          itemCount: 4,
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
               child: Container(
-                height: 220,
+                height: 185,
                 width: MediaQuery.of(context).size.width,
                 decoration: const BoxDecoration(
                   color: Colors.white,
@@ -81,7 +67,7 @@ class _BookingListViewState extends State<BookingListView> {
                                     const BorderRadius.all(Radius.circular(5))),
                             child: const Center(
                               child: Text(
-                                "Pending",
+                                "Done",
                                 style: TextStyle(
                                     color: Colors.red,
                                     fontSize: 10,
@@ -119,21 +105,7 @@ class _BookingListViewState extends State<BookingListView> {
                       ),
                       const Text("1 Room (4 Seats)"),
                       const SizedBox(
-                        height: 7,
-                      ),
-                      const Text(
-                        "Complete your payment before",
-                        style: TextStyle(fontSize: 12),
-                      ),
-                      const SizedBox(
-                        height: 2,
-                      ),
-                      const Text(
-                        "5 Oct 2023 - 16:30:00",
-                        style: TextStyle(color: Colors.blue),
-                      ),
-                      const SizedBox(
-                        height: 7,
+                        height: 10,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -141,21 +113,7 @@ class _BookingListViewState extends State<BookingListView> {
                           ElevatedButton(
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
-                              fixedSize: const Size(150, 40),
-                              backgroundColor: Colors.grey[300],
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                            ),
-                            child: const Text(
-                              "Cancel",
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              fixedSize: const Size(150, 40),
+                              fixedSize: const Size(300, 40),
                               backgroundColor:
                                   const Color.fromRGBO(255, 175, 0, 50),
                               shape: RoundedRectangleBorder(
@@ -163,7 +121,7 @@ class _BookingListViewState extends State<BookingListView> {
                               ),
                             ),
                             child: const Text(
-                              "Payment",
+                              "Booking Again",
                               style: TextStyle(color: Colors.black),
                             ),
                           ),
@@ -177,4 +135,7 @@ class _BookingListViewState extends State<BookingListView> {
           }),
     );
   }
+
+  @override
+  State<HistoryBookingView> createState() => HistoryBookingController();
 }

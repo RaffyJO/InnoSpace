@@ -1,8 +1,8 @@
 {
     "modules": [
-        "innocafe_detail"
+        "history_booking"
     ],
-    "module_directory_name": "owner",
+    "module_directory_name": "module",
     "experimental_mode": false,
     "learning_mode": false,
     "unfreezed": true,
