@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
 
-import '../controller/payment_controller.dart';
-
 class PaymentView extends StatefulWidget {
   const PaymentView({Key? key}) : super(key: key);
 
@@ -148,55 +146,121 @@ class PaymentView extends StatefulWidget {
                 style: TextStyle(fontWeight: FontWeight.w600),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
-              child: Container(
-                height: 30,
-                width: MediaQuery.of(context).size.width,
-                decoration: const BoxDecoration(color: Colors.grey),
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    ImageIcon(
-                      AssetImage(
-                        "assets/aset/logo-gopay1.png",
-                      ),
-                    ),
-                    Text("Gopay"),
-                  ],
+            Card(
+              child: ListTile(
+                leading: const CircleAvatar(
+                  backgroundImage: AssetImage(
+                    "assets/aset/logo-gopay1.png",
+                  ),
+                ),
+                title: const Text("Gopay"),
+                subtitle: const Text("Via Dompet Elektronik"),
+                trailing: Checkbox(
+                  value: controller.isSelected,
+                  onChanged: controller.onChanged,
                 ),
               ),
             ),
-            OutlinedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                  side: MaterialStateProperty.all(BorderSide(
-                      color: isSelected ? Colors.blue : Colors.grey))),
-              child: const Text("Gopay"),
+            Card(
+              child: ListTile(
+                leading: const CircleAvatar(
+                  backgroundImage: AssetImage(
+                    "assets/aset/logo-gopay1.png",
+                  ),
+                ),
+                title: const Text("Gopay"),
+                subtitle: const Text("Via Dompet Elektronik"),
+                trailing: Checkbox(
+                  value: controller.isSelected2,
+                  onChanged: controller.onChanged2,
+                ),
+              ),
             ),
-            // Padding(
-            //   padding: const EdgeInsets.all(8.0),
-            //   child: ListView.builder(
-            //       itemCount: 4,
-            //       itemBuilder: (context, index) {
-            //         return Padding(
-            //           padding:
-            //               const EdgeInsets.only(left: 15, right: 15, top: 15),
-            //           child: Container(
-            //             height: 100,
-            //             width: MediaQuery.of(context).size.width,
-            //             decoration: const BoxDecoration(color: Colors.grey),
-            //           ),
-            //         );
-            //       }),
-            // )
+            Card(
+              child: ListTile(
+                leading: const CircleAvatar(
+                  backgroundImage: AssetImage(
+                    "assets/aset/logo-gopay1.png",
+                  ),
+                ),
+                title: const Text("Gopay"),
+                subtitle: const Text("Via Dompet Elektronik"),
+                trailing: Checkbox(
+                  value: controller.isSelected3,
+                  onChanged: controller.onChanged3,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        padding: const EdgeInsets.all(16.0),
+        decoration: BoxDecoration(
+          color: Colors.white, // Warna latar belakang
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5), // Warna bayangan
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: const Offset(0, -3), // Atur offset untuk bayangan ke atas
+            ),
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(
+              height: 50,
+              width: 100,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Price",
+                    style: TextStyle(
+                      fontSize: 18.0,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "IDR 100.000",
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                backgroundColor: const Color.fromARGB(194, 255, 174, 0),
+                fixedSize: const Size(200, 40),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const PaymentsView(),
+                  ),
+                );
+              },
+              child: Text(
+                "Pay Now".toUpperCase(),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
-
-  final bool isSelected = false;
 
   @override
   State<PaymentView> createState() => PaymentController();

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:innospace/module/payment/view/payment_view.dart';
 import 'package:innospace/core.dart';
 
 class BookingListView extends StatefulWidget {
@@ -153,7 +154,16 @@ class _BookingListViewState extends State<BookingListView> {
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return const PaymentView();
+                                  },
+                                ),
+                              );
+                            },
                             style: ElevatedButton.styleFrom(
                               fixedSize: const Size(150, 40),
                               backgroundColor:

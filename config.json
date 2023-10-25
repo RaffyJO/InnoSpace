@@ -1,6 +1,9 @@
 {
     "modules": [
-        "history_booking"
+
+        "payments"
+
+
     ],
     "module_directory_name": "module",
     "experimental_mode": false,

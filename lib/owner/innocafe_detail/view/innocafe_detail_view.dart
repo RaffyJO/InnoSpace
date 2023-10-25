@@ -296,7 +296,7 @@ class InnocafeDetailView extends StatefulWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => DashboardView(),
+                    builder: (context) => const PaymentView(),
                   ),
                 );
               },

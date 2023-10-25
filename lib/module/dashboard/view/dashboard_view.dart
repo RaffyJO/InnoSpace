@@ -6,6 +6,7 @@ class DashboardView extends StatefulWidget {
 
   Widget build(context, DashboardController controller) {
     controller.view = this;
+    double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       body: SafeArea(
