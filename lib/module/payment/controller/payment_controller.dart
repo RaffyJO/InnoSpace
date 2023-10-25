@@ -24,18 +24,24 @@ class PaymentController extends State<PaymentView> {
   void onChanged(bool? newValue) {
     setState(() {
       isSelected = newValue ?? false;
+      isSelected2 = false;
+      isSelected3 = false;
     });
   }
 
   void onChanged2(bool? newValue) {
     setState(() {
       isSelected2 = newValue ?? false;
+      isSelected = false;
+      isSelected3 = false;
     });
   }
 
   void onChanged3(bool? newValue) {
     setState(() {
       isSelected3 = newValue ?? false;
+      isSelected2 = false;
+      isSelected = false;
     });
   }
 }

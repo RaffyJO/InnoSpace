@@ -91,8 +91,19 @@ class DashboardView extends StatefulWidget {
                         children: [
                           Expanded(
                             child: InkWell(
+<<<<<<< Updated upstream
                               onTap: () {},
                               child: Expanded(
+=======
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const InnoworkView()));
+                              },
+                              child: const Expanded(
+>>>>>>> Stashed changes
                                 child: Column(children: <Widget>[
                                   const SizedBox(height: 5),
                                   Image.asset(
@@ -148,6 +159,7 @@ class DashboardView extends StatefulWidget {
                           ),
                           Expanded(
                             child: InkWell(
+<<<<<<< Updated upstream
                               onTap: () {},
                               child: Expanded(
                                 child: Column(
@@ -166,6 +178,31 @@ class DashboardView extends StatefulWidget {
                                         height: 6,
                                       )
                                     ]),
+=======
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const InnocoinView()));
+                              },
+                              child: const Expanded(
+                                child: Column(children: <Widget>[
+                                  SizedBox(height: 5),
+                                  Expanded(
+                                      child: Icon(
+                                    Icons.monetization_on_sharp,
+                                    color: Color.fromRGBO(255, 175, 0, 50),
+                                    size: 29,
+                                  )),
+                                  Text(
+                                    "InnoCoin",
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  )
+                                ]),
+>>>>>>> Stashed changes
                               ),
                             ),
                           ),

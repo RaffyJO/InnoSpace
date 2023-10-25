@@ -165,10 +165,10 @@ class PaymentView extends StatefulWidget {
               child: ListTile(
                 leading: const CircleAvatar(
                   backgroundImage: AssetImage(
-                    "assets/aset/logo-gopay1.png",
+                    "assets/aset/bca.png",
                   ),
                 ),
-                title: const Text("Gopay"),
+                title: const Text("Bank Central Asia"),
                 subtitle: const Text("Via Dompet Elektronik"),
                 trailing: Checkbox(
                   value: controller.isSelected2,
@@ -180,10 +180,10 @@ class PaymentView extends StatefulWidget {
               child: ListTile(
                 leading: const CircleAvatar(
                   backgroundImage: AssetImage(
-                    "assets/aset/logo-gopay1.png",
+                    "assets/aset/dana.png",
                   ),
                 ),
-                title: const Text("Gopay"),
+                title: const Text("Dana"),
                 subtitle: const Text("Via Dompet Elektronik"),
                 trailing: Checkbox(
                   value: controller.isSelected3,
@@ -213,7 +213,7 @@ class PaymentView extends StatefulWidget {
           children: [
             const SizedBox(
               height: 50,
-              width: 100,
+              width: 120,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -224,12 +224,12 @@ class PaymentView extends StatefulWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 5,
                   ),
                   Text(
                     "IDR 100.000",
                     style: TextStyle(
-                      fontSize: 18.0,
+                      fontSize: 15.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
