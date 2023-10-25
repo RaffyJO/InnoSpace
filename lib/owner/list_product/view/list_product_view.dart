@@ -113,7 +113,13 @@ class ListProductView extends StatefulWidget {
                               side: const BorderSide(
                                   color: Colors.grey, width: 1),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => EditProductView()),
+                              );
+                            },
                             child: const Text(
                               "Edit",
                               style:
@@ -208,7 +214,13 @@ class ListProductView extends StatefulWidget {
                               side: const BorderSide(
                                   color: Colors.grey, width: 1),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => EditProductView()),
+                              );
+                            },
                             child: const Text(
                               "Edit",
                               style:

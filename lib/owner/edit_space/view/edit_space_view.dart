@@ -1,18 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
 
-class AddSpaceView extends StatefulWidget {
-  AddSpaceView({Key? key}) : super(key: key);
+class EditSpaceView extends StatefulWidget {
+  EditSpaceView({Key? key}) : super(key: key);
 
-  Widget build(context, AddSpaceController controller) {
+  Widget build(context, EditSpaceController controller) {
     controller.view = this;
+
+    final TextEditingController spaceNameController = TextEditingController();
+    final TextEditingController priceController = TextEditingController();
+    final TextEditingController descriptionController = TextEditingController();
+    final TextEditingController tableController = TextEditingController();
+    final TextEditingController seatsController = TextEditingController();
+
+    spaceNameController.text = "Out Door";
+    priceController.text = "100000";
+    descriptionController.text =
+        "If you love to be outside maybe this type of place match with you";
+    tableController.text = "1";
+    seatsController.text = "4";
 
     return Scaffold(
       appBar: AppBar(
         elevation: 2,
         backgroundColor: Colors.white,
         title: const Text(
-          "Add Space",
+          "Edit Space",
           style: TextStyle(color: Colors.black, fontSize: 17),
         ),
         centerTitle: true,
@@ -49,14 +62,14 @@ class AddSpaceView extends StatefulWidget {
             Container(
               margin: const EdgeInsets.only(
                   top: 5, bottom: 20, left: 15, right: 15),
-              child: const Column(
+              child: Column(
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       TextField(
-                        // controller: _namaController,
-                        decoration: InputDecoration(
+                        controller: spaceNameController,
+                        decoration: const InputDecoration(
                             labelText: 'Name Room',
                             hintText: "Masukkan Nama Room..."),
                       ),
@@ -65,20 +78,22 @@ class AddSpaceView extends StatefulWidget {
                           SizedBox(
                             width: 50,
                             child: TextField(
-                              decoration: InputDecoration(
+                              controller: tableController,
+                              decoration: const InputDecoration(
                                 labelText: 'Table',
                                 hintText: '0',
                               ),
                               keyboardType: TextInputType.number,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 20,
                           ),
                           SizedBox(
                             width: 50,
                             child: TextField(
-                              decoration: InputDecoration(
+                              controller: seatsController,
+                              decoration: const InputDecoration(
                                 labelText: 'Seats',
                                 hintText: '0',
                               ),
@@ -88,15 +103,16 @@ class AddSpaceView extends StatefulWidget {
                         ],
                       ),
                       TextField(
-                        decoration: InputDecoration(
+                        controller: priceController,
+                        decoration: const InputDecoration(
                           labelText: 'Price',
                           hintText: "Masukkan Harga...",
                         ),
                         keyboardType: TextInputType.number,
                       ),
                       TextField(
-                        // controller: _namaController,
-                        decoration: InputDecoration(
+                        controller: descriptionController,
+                        decoration: const InputDecoration(
                             labelText: 'Description',
                             hintText: "Masukkan Deskripsi..."),
                       ),
@@ -128,7 +144,7 @@ class AddSpaceView extends StatefulWidget {
                       children: [
                         InkWell(
                           onTap: () {
-                            AddSpaceController.instance.setState(() {
+                            EditSpaceController.instance.setState(() {
                               _isWifi = !_isWifi;
                             });
                           },
@@ -159,7 +175,7 @@ class AddSpaceView extends StatefulWidget {
                         ),
                         InkWell(
                           onTap: () {
-                            AddSpaceController.instance.setState(() {
+                            EditSpaceController.instance.setState(() {
                               _isToilet = !_isToilet;
                             });
                           },
@@ -190,7 +206,7 @@ class AddSpaceView extends StatefulWidget {
                         ),
                         InkWell(
                           onTap: () {
-                            AddSpaceController.instance.setState(() {
+                            EditSpaceController.instance.setState(() {
                               _isFood = !_isFood;
                             });
                           },
@@ -229,7 +245,7 @@ class AddSpaceView extends StatefulWidget {
                       children: [
                         InkWell(
                           onTap: () {
-                            AddSpaceController.instance.setState(() {
+                            EditSpaceController.instance.setState(() {
                               _isParkir = !_isParkir;
                             });
                           },
@@ -260,7 +276,7 @@ class AddSpaceView extends StatefulWidget {
                         ),
                         InkWell(
                           onTap: () {
-                            AddSpaceController.instance.setState(() {
+                            EditSpaceController.instance.setState(() {
                               _isDrink = !_isDrink;
                             });
                           },
@@ -291,7 +307,7 @@ class AddSpaceView extends StatefulWidget {
                         ),
                         InkWell(
                           onTap: () {
-                            AddSpaceController.instance.setState(() {
+                            EditSpaceController.instance.setState(() {
                               _isCoffe = !_isCoffe;
                             });
                           },
@@ -336,7 +352,7 @@ class AddSpaceView extends StatefulWidget {
                           Navigator.pop(context);
                         },
                         child: const Text(
-                          "Save",
+                          "Update",
                           style: TextStyle(color: Colors.black),
                         ),
                       ),
@@ -349,13 +365,13 @@ class AddSpaceView extends StatefulWidget {
     );
   }
 
-  bool _isWifi = false;
+  bool _isWifi = true;
   bool _isToilet = false;
-  bool _isFood = false;
+  bool _isFood = true;
   bool _isParkir = false;
-  bool _isDrink = false;
-  bool _isCoffe = false;
+  bool _isDrink = true;
+  bool _isCoffe = true;
 
   @override
-  State<AddSpaceView> createState() => AddSpaceController();
+  State<EditSpaceView> createState() => EditSpaceController();
 }

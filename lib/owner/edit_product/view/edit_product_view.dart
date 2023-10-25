@@ -1,21 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
 
-class AddProductView extends StatefulWidget {
-  AddProductView({Key? key}) : super(key: key);
+class EditProductView extends StatefulWidget {
+  EditProductView({Key? key}) : super(key: key);
 
-  Widget build(context, AddProductController controller) {
+  Widget build(context, EditProductController controller) {
     controller.view = this;
 
     String dropdownValue = listCategory.first;
     String dropdownValue2 = listStock.first;
+
+    final TextEditingController productNameController = TextEditingController();
+    final TextEditingController priceController = TextEditingController();
+    final TextEditingController descriptionController = TextEditingController();
+
+    productNameController.text = "Thai Tea";
+    priceController.text = "10000";
+    descriptionController.text = "Minum teh yang enak dan murah";
 
     return Scaffold(
       appBar: AppBar(
         elevation: 2,
         backgroundColor: Colors.white,
         title: const Text(
-          "Add Product",
+          "Edit Product",
           style: TextStyle(color: Colors.black, fontSize: 17),
         ),
         centerTitle: true,
@@ -57,14 +65,16 @@ class AddProductView extends StatefulWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const TextField(
-                        // controller: _namaController,
-                        decoration: InputDecoration(
-                            labelText: 'Product Name',
-                            hintText: "Masukkan Nama Produk..."),
+                      TextField(
+                        controller: productNameController,
+                        decoration: const InputDecoration(
+                          labelText: 'Product Name',
+                          hintText: "Masukkan Nama Produk...",
+                        ),
                       ),
-                      const TextField(
-                        decoration: InputDecoration(
+                      TextField(
+                        controller: priceController,
+                        decoration: const InputDecoration(
                           labelText: 'Price',
                           hintText: "Masukkan Harga...",
                         ),
@@ -82,7 +92,7 @@ class AddProductView extends StatefulWidget {
                         hintText: "Choose",
                         onSelected: (String? value) {
                           // This is called when the user selects an item.
-                          AddProductController.instance.setState(() {
+                          EditProductController.instance.setState(() {
                             dropdownValue = value!;
                           });
                         },
@@ -106,7 +116,7 @@ class AddProductView extends StatefulWidget {
                         hintText: "Choose",
                         onSelected: (String? value) {
                           // This is called when the user selects an item.
-                          AddProductController.instance.setState(() {
+                          EditProductController.instance.setState(() {
                             dropdownValue2 = value!;
                           });
                         },
@@ -118,11 +128,12 @@ class AddProductView extends StatefulWidget {
                           );
                         }).toList(),
                       ),
-                      const TextField(
-                        // controller: _namaController,
-                        decoration: InputDecoration(
-                            labelText: 'Description',
-                            hintText: "Masukkan Deskripsi..."),
+                      TextField(
+                        controller: descriptionController,
+                        decoration: const InputDecoration(
+                          labelText: 'Description',
+                          hintText: "Masukkan Deskripsi...",
+                        ),
                       ),
                     ],
                   )
@@ -142,7 +153,7 @@ class AddProductView extends StatefulWidget {
                     Navigator.pop(context);
                   },
                   child: const Text(
-                    "Save",
+                    "Update",
                     style: TextStyle(color: Colors.black),
                   ),
                 ),
@@ -158,5 +169,5 @@ class AddProductView extends StatefulWidget {
   List<String> listStock = <String>['Available', 'Not Available'];
 
   @override
-  State<AddProductView> createState() => AddProductController();
+  State<EditProductView> createState() => EditProductController();
 }
