@@ -27,6 +27,10 @@ export 'package:innospace/owner/cancel_page/controller/cancel_page_controller.da
 export 'package:innospace/owner/cancel_page/view/cancel_page_view.dart';
 export 'package:innospace/owner/done_page/controller/done_page_controller.dart';
 export 'package:innospace/owner/done_page/view/done_page_view.dart';
+export 'package:innospace/owner/edit_product/controller/edit_product_controller.dart';
+export 'package:innospace/owner/edit_product/view/edit_product_view.dart';
+export 'package:innospace/owner/edit_space/controller/edit_space_controller.dart';
+export 'package:innospace/owner/edit_space/view/edit_space_view.dart';
 export 'package:innospace/owner/innocafe/controller/innocafe_controller.dart';
 export 'package:innospace/owner/innocafe/view/innocafe_view.dart';
 export 'package:innospace/owner/innocafe_detail/controller/innocafe_detail_controller.dart';
@@ -41,8 +45,10 @@ export 'package:innospace/owner/owner_dashboard/controller/owner_dashboard_contr
 export 'package:innospace/owner/owner_dashboard/view/owner_dashboard_view.dart';
 export 'package:innospace/owner/payments/controller/payments_controller.dart';
 export 'package:innospace/owner/payments/view/payments_view.dart';
+export 'package:innospace/owner/payments/view/payment_view_done.dart';
 export 'package:innospace/owner/signup_page/controller/signup_page_controller.dart';
 export 'package:innospace/owner/signup_page/view/signup_page_view.dart';
 export 'package:innospace/owner/status_booking/controller/status_booking_controller.dart';
 export 'package:innospace/owner/status_booking/view/status_booking_view.dart';
+export 'package:innospace/shared/widget/form/image_picker/image_picker.dart';
 export 'package:innospace/state_util.dart';

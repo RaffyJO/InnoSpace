@@ -109,7 +109,14 @@ class ListSpaceView extends StatefulWidget {
                                     side: const BorderSide(
                                         color: Colors.grey, width: 1),
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              EditSpaceView()),
+                                    );
+                                  },
                                   child: const Text(
                                     "Edit",
                                     style: TextStyle(

@@ -92,21 +92,25 @@ class DashboardView extends StatefulWidget {
                           Expanded(
                             child: InkWell(
                               onTap: () {},
-                              child: const Expanded(
+                              child: Expanded(
                                 child: Column(children: <Widget>[
-                                  SizedBox(height: 5),
-                                  Expanded(
-                                    child: ImageIcon(
-                                      AssetImage(
-                                        "assets/aset/InnoWork.png",
-                                      ),
-                                      color: Color.fromRGBO(255, 175, 0, 50),
-                                    ),
+                                  const SizedBox(height: 5),
+                                  Image.asset(
+                                    "assets/aset/InnoWork.png",
+                                    fit: BoxFit.cover,
                                   ),
-                                  Text(
+                                  // const Expanded(
+                                  //   child: ImageIcon(
+                                  //     AssetImage(
+                                  //       "assets/aset/InnoWork.png",
+                                  //     ),
+                                  //     color: Color.fromRGBO(255, 175, 0, 50),
+                                  //   ),
+                                  // ),
+                                  const Text(
                                     "InnoWork",
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 6,
                                   )
                                 ]),
@@ -122,48 +126,46 @@ class DashboardView extends StatefulWidget {
                                         builder: (context) =>
                                             const InnocafeView()));
                               },
-                              child: const Expanded(
-                                child: Column(children: <Widget>[
-                                  SizedBox(height: 5),
-                                  Expanded(
-                                    child: ImageIcon(
-                                      AssetImage(
+                              child: Expanded(
+                                child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      const SizedBox(height: 6),
+                                      Image.asset(
                                         "assets/aset/InnoCafe2.png",
+                                        fit: BoxFit.cover,
                                       ),
-                                      color: Color.fromRGBO(255, 175, 0, 50),
-                                    ),
-                                  ),
-                                  Text(
-                                    "InnoCafe",
-                                  ),
-                                  SizedBox(
-                                    height: 6,
-                                  )
-                                ]),
+                                      const Text(
+                                        "InnoCafe",
+                                      ),
+                                      const SizedBox(
+                                        height: 4,
+                                      )
+                                    ]),
                               ),
                             ),
                           ),
                           Expanded(
                             child: InkWell(
                               onTap: () {},
-                              child: const Expanded(
-                                child: Column(children: <Widget>[
-                                  SizedBox(height: 5),
-                                  Expanded(
-                                    child: ImageIcon(
-                                      AssetImage(
-                                        "assets/aset/InnoCoin2.png",
+                              child: Expanded(
+                                child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      const SizedBox(height: 5),
+                                      Image.asset(
+                                        "assets/aset/InnoCoin.png",
+                                        fit: BoxFit.cover,
                                       ),
-                                      color: Color.fromRGBO(255, 175, 0, 50),
-                                    ),
-                                  ),
-                                  Text(
-                                    "InnoCoin",
-                                  ),
-                                  SizedBox(
-                                    height: 6,
-                                  )
-                                ]),
+                                      const Text(
+                                        "InnoCoin",
+                                      ),
+                                      const SizedBox(
+                                        height: 6,
+                                      )
+                                    ]),
                               ),
                             ),
                           ),
@@ -241,12 +243,12 @@ class DashboardView extends StatefulWidget {
                     children: [
                       SizedBox(
                         width: double.infinity,
-                        height: 215,
+                        height: screenWidth * 0.5, // 75% of the screen width
                         child: Stack(
                           children: [
                             SizedBox(
                               width: double.infinity,
-                              height: double.infinity,
+                              height: 250,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(16.0),
                                 child: Image.network(
@@ -260,7 +262,7 @@ class DashboardView extends StatefulWidget {
                       ),
                       Container(
                         padding: const EdgeInsets.all(10.0),
-                        child: const Column(
+                        child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Row(
@@ -269,20 +271,10 @@ class DashboardView extends StatefulWidget {
                                 Text(
                                   "Piskip",
                                   style: TextStyle(
-                                    fontSize: 25.0,
+                                    fontSize: screenWidth *
+                                        0.06, // Adjust the font size
                                     fontWeight: FontWeight.bold,
                                   ),
-                                ),
-                                Column(
-                                  children: [
-                                    Text(
-                                      "Recently Book",
-                                      style: TextStyle(
-                                        fontSize: 17.0,
-                                      ),
-                                    ),
-                                    SizedBox(height: 10),
-                                  ],
                                 ),
                               ],
                             ),
@@ -295,22 +287,24 @@ class DashboardView extends StatefulWidget {
                                     Text(
                                       "Jl. Pisang Kipas No.6, Jatimulyo, ",
                                       style: TextStyle(
-                                        fontSize: 14.0,
+                                        fontSize: screenWidth *
+                                            0.03, // Adjust the font size
                                       ),
                                     ),
                                     Text(
                                       "Kec. Lowokwaru, Kota Malang, Jawa Timur 65141",
                                       style: TextStyle(
-                                        fontSize: 14.0,
+                                        fontSize: screenWidth *
+                                            0.03, // Adjust the font size
                                       ),
                                     ),
                                   ],
                                 ),
                                 Row(
                                   children: [
-                                    Icon(Icons.bookmark),
-                                    SizedBox(height: 5),
-                                    Text("0.7 km"),
+                                    const Icon(Icons.location_on),
+                                    SizedBox(height: screenWidth * 0.01),
+                                    const Text("0.7 km"),
                                   ],
                                 ),
                               ],
@@ -318,8 +312,8 @@ class DashboardView extends StatefulWidget {
                           ],
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: screenWidth * 0.02,
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
@@ -328,7 +322,8 @@ class DashboardView extends StatefulWidget {
                           ),
                           backgroundColor:
                               const Color.fromARGB(194, 255, 174, 0),
-                          fixedSize: const Size(330, 50),
+                          fixedSize: Size(screenWidth * 0.8,
+                              screenWidth * 0.1), // Adjust the button size
                         ),
                         onPressed: () {
                           Navigator.push(
@@ -340,10 +335,13 @@ class DashboardView extends StatefulWidget {
                         },
                         child: Text(
                           "See More".toUpperCase(),
+                          style: TextStyle(
+                              fontSize:
+                                  screenWidth * 0.04), // Adjust the font size
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: screenWidth * 0.02,
                       ),
                     ],
                   ),

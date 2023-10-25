@@ -1,11 +1,8 @@
 {
     "modules": [
-
-        "payments"
-
-
+        "edit_space"
     ],
-    "module_directory_name": "module",
+    "module_directory_name": "owner",
     "experimental_mode": false,
     "learning_mode": false,
     "unfreezed": true,

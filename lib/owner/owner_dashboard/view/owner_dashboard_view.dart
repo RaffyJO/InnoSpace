@@ -15,6 +15,14 @@ class OwnerDashboardView extends StatefulWidget {
           "Outlet",
           style: TextStyle(color: Colors.black, fontSize: 17),
         ),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          color: Colors.black, // Icon "back"
+          onPressed: () {
+            // Fungsi yang dipanggil saat tombol "back" ditekan
+            Navigator.of(context).pop();
+          },
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -213,14 +221,20 @@ class OwnerDashboardView extends StatefulWidget {
                           );
                         },
                         child: Container(
-                          color: Colors.grey[300],
+                          color: Colors.white12,
                           height: 150,
                           width: 150,
-                          child: const Column(
+                          child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
-                              Text("Nanti ini gambar"),
-                              Text("Space"),
+                              Image.asset(
+                                "assets/aset/space.png",
+                                fit: BoxFit.cover,
+                              ),
+                              const Text(
+                                "Space",
+                                style: TextStyle(fontWeight: FontWeight.w500),
+                              ),
                             ],
                           ),
                         ),
@@ -234,14 +248,20 @@ class OwnerDashboardView extends StatefulWidget {
                           );
                         },
                         child: Container(
-                          color: Colors.grey[300],
+                          color: Colors.white12,
                           height: 150,
                           width: 150,
-                          child: const Column(
+                          child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
-                              Text("Nanti ini gambar"),
-                              Text("Product"),
+                              Image.asset(
+                                "assets/aset/product.png",
+                                fit: BoxFit.cover,
+                              ),
+                              const Text(
+                                "Product",
+                                style: TextStyle(fontWeight: FontWeight.w500),
+                              ),
                             ],
                           ),
                         ),

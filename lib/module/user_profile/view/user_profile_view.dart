@@ -191,7 +191,41 @@ class UserProfileView extends StatefulWidget {
                           ],
                         ),
                       ),
-                    )
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => OwnerDashboardView()));
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 20, right: 20),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: 60,
+                          decoration: BoxDecoration(
+                              border: Border.all(),
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(10))),
+                          child: Row(
+                            children: [
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              Image.asset("assets/aset/store.png"),
+                              const SizedBox(
+                                width: 20,
+                              ),
+                              const Text("Store")
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               )
