@@ -91,7 +91,14 @@ class DashboardView extends StatefulWidget {
                         children: [
                           Expanded(
                             child: InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const InnoworkView(),
+                                  ),
+                                );
+                              },
                               child: Expanded(
                                 child: Column(children: <Widget>[
                                   const SizedBox(height: 5),
@@ -99,14 +106,6 @@ class DashboardView extends StatefulWidget {
                                     "assets/aset/InnoWork.png",
                                     fit: BoxFit.cover,
                                   ),
-                                  // const Expanded(
-                                  //   child: ImageIcon(
-                                  //     AssetImage(
-                                  //       "assets/aset/InnoWork.png",
-                                  //     ),
-                                  //     color: Color.fromRGBO(255, 175, 0, 50),
-                                  //   ),
-                                  // ),
                                   const Text(
                                     "InnoWork",
                                   ),
@@ -148,7 +147,14 @@ class DashboardView extends StatefulWidget {
                           ),
                           Expanded(
                             child: InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const InnocoinView(),
+                                  ),
+                                );
+                              },
                               child: Expanded(
                                 child: Column(
                                     mainAxisAlignment:

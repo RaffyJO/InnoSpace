@@ -13,6 +13,12 @@ export 'package:innospace/module/edit_profile/controller/edit_profile_controller
 export 'package:innospace/module/edit_profile/view/edit_profile_view.dart';
 export 'package:innospace/module/history_booking/controller/history_booking_controller.dart';
 export 'package:innospace/module/history_booking/view/history_booking_view.dart';
+export 'package:innospace/module/innocoin/controller/innocoin_controller.dart';
+export 'package:innospace/module/innocoin/view/innocoin_view.dart';
+export 'package:innospace/module/innowork/controller/innowork_controller.dart';
+export 'package:innospace/module/innowork/view/innowork_view.dart';
+export 'package:innospace/module/innowork_detail/controller/innowork_detail_controller.dart';
+export 'package:innospace/module/innowork_detail/view/innowork_detail_view.dart';
 export 'package:innospace/module/payment/controller/payment_controller.dart';
 export 'package:innospace/module/payment/view/payment_view.dart';
 export 'package:innospace/module/user_profile/controller/user_profile_controller.dart';

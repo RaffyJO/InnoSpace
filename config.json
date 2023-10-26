@@ -1,6 +1,10 @@
 {
     "modules": [
+<<<<<<< Updated upstream
         "edit_space"
+=======
+        "innowork_detail"
+>>>>>>> Stashed changes
     ],
     "module_directory_name": "owner",
     "experimental_mode": false,
