@@ -19,6 +19,8 @@ export 'package:innospace/module/innowork/controller/innowork_controller.dart';
 export 'package:innospace/module/innowork/view/innowork_view.dart';
 export 'package:innospace/module/innowork_detail/controller/innowork_detail_controller.dart';
 export 'package:innospace/module/innowork_detail/view/innowork_detail_view.dart';
+export 'package:innospace/module/navbarup_space/controller/navbarup_space_controller.dart';
+export 'package:innospace/module/navbarup_space/view/navbarup_space_view.dart';
 export 'package:innospace/module/payment/controller/payment_controller.dart';
 export 'package:innospace/module/payment/view/payment_view.dart';
 export 'package:innospace/module/user_profile/controller/user_profile_controller.dart';

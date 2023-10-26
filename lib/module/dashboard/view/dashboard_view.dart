@@ -95,7 +95,8 @@ class DashboardView extends StatefulWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => const InnoworkView(),
+                                    builder: (context) =>
+                                        NavbarupSpaceView(initialTabIndex: 0),
                                   ),
                                 );
                               },
@@ -122,8 +123,8 @@ class DashboardView extends StatefulWidget {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) =>
-                                            const InnocafeView()));
+                                        builder: (context) => NavbarupSpaceView(
+                                            initialTabIndex: 1)));
                               },
                               child: Expanded(
                                 child: Column(

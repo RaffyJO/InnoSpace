@@ -261,7 +261,7 @@ class InnocafeDetailView extends StatefulWidget {
           children: [
             const SizedBox(
               height: 50,
-              width: 100,
+              width: 180,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -272,7 +272,7 @@ class InnocafeDetailView extends StatefulWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 5,
                   ),
                   Text(
                     "IDR 100.000",
@@ -290,7 +290,7 @@ class InnocafeDetailView extends StatefulWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 backgroundColor: const Color.fromARGB(194, 255, 174, 0),
-                fixedSize: const Size(200, 40),
+                fixedSize: const Size(190, 40),
               ),
               onPressed: () {
                 Navigator.push(

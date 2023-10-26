@@ -34,8 +34,8 @@ class InnoworkDetailView extends StatefulWidget {
                     height: double.infinity,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(16.0),
-                      child: Image.network(
-                        "https://lh3.googleusercontent.com/p/AF1QipNHP4Ng0tqkhIB7dpsm8RsU6OGXkkl_MI0LCqFW=s1360-w1360-h1020",
+                      child: Image.asset(
+                        "assets/aset/innowork_ruangPerintis.jpg",
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -164,8 +164,8 @@ class InnoworkDetailView extends StatefulWidget {
                       height: double.infinity,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20.0),
-                        child: Image.network(
-                          "https://lh3.googleusercontent.com/p/AF1QipMqaQHq8COKDGZARaM2BhpwEzEsmRlqiJG6uMbc=s1360-w1360-h1020",
+                        child: Image.asset(
+                          "assets/aset/roomInnowork.jpg",
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -272,10 +272,10 @@ class InnoworkDetailView extends StatefulWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 5,
                   ),
                   Text(
-                    "IDR 10.000.000",
+                    "IDR 100.000",
                     style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,
@@ -290,7 +290,7 @@ class InnoworkDetailView extends StatefulWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 backgroundColor: const Color.fromARGB(194, 255, 174, 0),
-                fixedSize: const Size(200, 40),
+                fixedSize: const Size(190, 40),
               ),
               onPressed: () {
                 Navigator.push(

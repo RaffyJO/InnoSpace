@@ -23,101 +23,101 @@ class InnocoinView extends StatefulWidget {
         backgroundColor: const Color.fromARGB(206, 255, 255, 255),
         actions: const [],
       ),
-      body: Container(
-        child: Column(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(25.0),
-              child: Column(
-                children: [
-                  Container(
-                    height: 175,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: const BoxDecoration(
-                      color: Color.fromARGB(194, 255, 174, 0),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(16.0),
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(25.0),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 175,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: const BoxDecoration(
+                        color: Color.fromARGB(194, 255, 174, 0),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(16.0),
+                        ),
                       ),
-                    ),
-                    child: const Padding(
-                      padding: EdgeInsets.fromLTRB(25, 25, 25, 0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Your Coin",
-                            style: TextStyle(
-                              fontSize: 27.0,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 20),
-                            child: Text(
-                              "Rp. 100.000",
+                      child: const Padding(
+                        padding: EdgeInsets.fromLTRB(25, 25, 25, 0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Your Coin",
                               style: TextStyle(
-                                fontSize: 40.0,
+                                fontSize: 27.0,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                          ),
-                          SizedBox(height: 15), // Add space below the text
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              CircleAvatar(
-                                backgroundColor: Colors.red,
-                                radius: 20,
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Rp. 100.000",
+                                style: TextStyle(
+                                  fontSize: 40.0,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                              SizedBox(width: 10),
-                              CircleAvatar(
-                                backgroundColor: Colors.orange,
-                                radius: 18,
-                              ),
-                              SizedBox(width: 10),
-                              CircleAvatar(
-                                backgroundColor: Colors.yellow,
-                                radius: 16,
-                              ),
-                              SizedBox(width: 10),
-                              CircleAvatar(
-                                backgroundColor: Colors.green,
-                                radius: 14,
-                              ),
-                              SizedBox(width: 10),
-                              CircleAvatar(
-                                backgroundColor: Colors.blue,
-                                radius: 12,
-                              ),
-                              SizedBox(width: 10),
-                              CircleAvatar(
-                                backgroundColor: Colors.indigo,
-                                radius: 10,
-                              ),
-                              SizedBox(width: 10),
-                              CircleAvatar(
-                                backgroundColor: Colors.purple,
-                                radius: 8,
-                              ),
-                            ],
-                          ),
-                        ],
+                            ),
+                            SizedBox(height: 15), // Add space below the text
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                CircleAvatar(
+                                  backgroundColor: Colors.red,
+                                  radius: 20,
+                                ),
+                                SizedBox(width: 10),
+                                CircleAvatar(
+                                  backgroundColor: Colors.orange,
+                                  radius: 18,
+                                ),
+                                SizedBox(width: 10),
+                                CircleAvatar(
+                                  backgroundColor: Colors.yellow,
+                                  radius: 16,
+                                ),
+                                SizedBox(width: 10),
+                                CircleAvatar(
+                                  backgroundColor: Colors.green,
+                                  radius: 14,
+                                ),
+                                SizedBox(width: 10),
+                                CircleAvatar(
+                                  backgroundColor: Colors.blue,
+                                  radius: 12,
+                                ),
+                                SizedBox(width: 10),
+                                CircleAvatar(
+                                  backgroundColor: Colors.indigo,
+                                  radius: 10,
+                                ),
+                                SizedBox(width: 10),
+                                CircleAvatar(
+                                  backgroundColor: Colors.purple,
+                                  radius: 8,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            Expanded(
-              child: Container(
+              const SizedBox(
+                height: 50,
+              ),
+              Container(
                 width: MediaQuery.of(context).size.width,
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(194, 255, 174, 0),
@@ -256,8 +256,8 @@ class InnocoinView extends StatefulWidget {
                   ],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

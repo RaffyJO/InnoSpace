@@ -7,6 +7,18 @@ class EditProfileView extends StatefulWidget {
   Widget build(context, EditProfileController controller) {
     controller.view = this;
 
+    final TextEditingController firstNameController = TextEditingController();
+    final TextEditingController lastNameController = TextEditingController();
+    final TextEditingController dateOfBirthController = TextEditingController();
+    final TextEditingController phoneNumberController = TextEditingController();
+    final TextEditingController emailController = TextEditingController();
+
+    firstNameController.text = "Taylor";
+    lastNameController.text = "Swift";
+    dateOfBirthController.text = "19 Desember 1989";
+    phoneNumberController.text = "+62 8576-1234-123";
+    emailController.text = "taylor@gmail.com";
+
     return Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
@@ -90,51 +102,51 @@ class EditProfileView extends StatefulWidget {
             Padding(
               padding: const EdgeInsets.only(top: 5, left: 20, right: 20),
               child: Container(
-                child: const Column(
+                child: Column(
                   children: [
                     TextField(
-                      // controller: _namaController,
-                      decoration: InputDecoration(
+                      controller: firstNameController,
+                      decoration: const InputDecoration(
                         labelText: 'First Name',
                         hintText: "Masukkan Nama Depan...",
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     TextField(
-                      // controller: _namaController,
-                      decoration: InputDecoration(
+                      controller: lastNameController,
+                      decoration: const InputDecoration(
                         labelText: 'Last Name',
                         hintText: "Masukkan Nama Belakang...",
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     TextField(
-                      // controller: _namaController,
-                      decoration: InputDecoration(
+                      controller: dateOfBirthController,
+                      decoration: const InputDecoration(
                         labelText: 'Date of Birth',
                         hintText: "Masukkan Tanggal Lahir...",
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     TextField(
-                      // controller: _namaController,
-                      decoration: InputDecoration(
+                      controller: phoneNumberController,
+                      decoration: const InputDecoration(
                         labelText: 'Phone Number',
                         hintText: "Masukkan Nomor Telefon...",
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     TextField(
-                      // controller: _namaController,
-                      decoration: InputDecoration(
+                      controller: emailController,
+                      decoration: const InputDecoration(
                         labelText: 'E-Mail',
                         hintText: "Masukkan E-Mail...",
                       ),
