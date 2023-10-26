@@ -49,6 +49,9 @@ class OwnerDashboardView extends StatefulWidget {
                             "KopiSip",
                             style: TextStyle(fontWeight: FontWeight.w600),
                           ),
+                          SizedBox(
+                            height: 3,
+                          ),
                           Text(
                             "Jl. Pisang Kipas No.6, Jatimulyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141",
                             style: TextStyle(fontSize: 12),

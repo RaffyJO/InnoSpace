@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
 
-import '../controller/history_booking_controller.dart';
-
 class HistoryBookingView extends StatefulWidget {
   const HistoryBookingView({Key? key}) : super(key: key);
 
@@ -111,7 +109,14 @@ class HistoryBookingView extends StatefulWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const InnocafeDetailView()),
+                              );
+                            },
                             style: ElevatedButton.styleFrom(
                               fixedSize: const Size(300, 40),
                               backgroundColor:

@@ -108,7 +108,10 @@ class UserProfileView extends StatefulWidget {
                               const SizedBox(
                                 width: 20,
                               ),
-                              const Text("My Profile")
+                              const Text(
+                                "My Profile",
+                                style: TextStyle(fontWeight: FontWeight.w500),
+                              )
                             ],
                           ),
                         ),
@@ -135,7 +138,10 @@ class UserProfileView extends StatefulWidget {
                             const SizedBox(
                               width: 20,
                             ),
-                            const Text("Change Password")
+                            const Text(
+                              "Change Password",
+                              style: TextStyle(fontWeight: FontWeight.w500),
+                            )
                           ],
                         ),
                       ),
@@ -161,7 +167,10 @@ class UserProfileView extends StatefulWidget {
                             const SizedBox(
                               width: 20,
                             ),
-                            const Text("taylor@gmail.com")
+                            const Text(
+                              "taylor@gmail.com",
+                              style: TextStyle(fontWeight: FontWeight.w500),
+                            )
                           ],
                         ),
                       ),
@@ -187,7 +196,10 @@ class UserProfileView extends StatefulWidget {
                             const SizedBox(
                               width: 20,
                             ),
-                            const Text("+62 8576-1234-123")
+                            const Text(
+                              "+62 8576-1234-123",
+                              style: TextStyle(fontWeight: FontWeight.w500),
+                            )
                           ],
                         ),
                       ),
@@ -220,7 +232,10 @@ class UserProfileView extends StatefulWidget {
                               const SizedBox(
                                 width: 20,
                               ),
-                              const Text("Store")
+                              const Text(
+                                "Store",
+                                style: TextStyle(fontWeight: FontWeight.w500),
+                              )
                             ],
                           ),
                         ),

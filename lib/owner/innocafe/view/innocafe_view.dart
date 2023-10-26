@@ -9,11 +9,6 @@ class InnocafeView extends StatefulWidget {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(255, 175, 0, 50),
-        title: const Text("Innocafe"),
-        actions: const [],
-      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -99,7 +94,7 @@ class InnocafeView extends StatefulWidget {
                               ),
                               Row(
                                 children: [
-                                  const Icon(Icons.bookmark),
+                                  const Icon(Icons.location_on),
                                   SizedBox(height: screenWidth * 0.01),
                                   const Text("0.7 km"),
                                 ],
@@ -232,7 +227,7 @@ class InnocafeView extends StatefulWidget {
                               ),
                               Row(
                                 children: [
-                                  const Icon(Icons.bookmark),
+                                  const Icon(Icons.location_on),
                                   SizedBox(height: screenWidth * 0.01),
                                   const Text("2.1 km"),
                                 ],
