@@ -23,6 +23,6 @@ class MainApp extends StatelessWidget {
               ),
         },
         debugShowCheckedModeBanner: false,
-        home: const LoginPageView());
+        home: const FloatMainNavigationView(initialSelectedIndex: 0));
   }
 }

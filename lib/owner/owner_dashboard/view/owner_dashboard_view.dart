@@ -23,6 +23,20 @@ class OwnerDashboardView extends StatefulWidget {
             Navigator.of(context).pop();
           },
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const OwnerWalletView(),
+                ),
+              );
+            },
+            icon: const Icon(Icons.account_balance_wallet),
+            color: Colors.black,
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
