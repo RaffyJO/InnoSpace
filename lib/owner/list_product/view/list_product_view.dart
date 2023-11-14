@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
+import 'package:innospace/entities/product.dart';
 
 class ListProductView extends StatefulWidget {
   ListProductView({Key? key}) : super(key: key);
@@ -28,9 +29,10 @@ class ListProductView extends StatefulWidget {
       body: Stack(
         children: [
           ListView.builder(
-            itemCount: drink + food,
+            itemCount: productsList.length,
             itemBuilder: (context, index) {
-              if (index < drink) {
+              Products products = productsList[index];
+              if (products.type == "drink") {
                 return Padding(
                   padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
                   child: Container(
@@ -52,36 +54,36 @@ class ListProductView extends StatefulWidget {
                               padding: const EdgeInsets.only(
                                   left: 5, right: 10, top: 5, bottom: 5),
                               child: Image.asset(
-                                "assets/aset/Minuman.webp",
+                                products.imgUrl,
                                 width: 50.0,
                                 height: 50.0,
                                 fit: BoxFit.cover,
                               ),
                             ),
-                            const Column(
+                            Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "Thai Tea",
-                                  style: TextStyle(
+                                  products.name,
+                                  style: const TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.w600),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 2,
                                 ),
                                 Text(
-                                  "Rp.10.000",
-                                  style: TextStyle(
+                                  "Rp${products.price}",
+                                  style: const TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.w500),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 2,
                                 ),
                                 SizedBox(
                                   width: 240,
-                                  child: Text("Minum teh yang enak dan murah"),
+                                  child: Text(products.description),
                                 ),
                               ],
                             ),
@@ -92,10 +94,10 @@ class ListProductView extends StatefulWidget {
                                   color: Colors.yellow[200],
                                   borderRadius: const BorderRadius.all(
                                       Radius.circular(5))),
-                              child: const Center(
+                              child: Center(
                                 child: Text(
-                                  "Available",
-                                  style: TextStyle(
+                                  products.availability ? "Tersedia" : "Kosong",
+                                  style: const TextStyle(
                                       color: Colors.black,
                                       fontSize: 10,
                                       fontWeight: FontWeight.w500),
@@ -153,36 +155,36 @@ class ListProductView extends StatefulWidget {
                               padding: const EdgeInsets.only(
                                   left: 5, right: 10, top: 5, bottom: 5),
                               child: Image.asset(
-                                "assets/aset/AyamGeprek.png",
+                                products.imgUrl,
                                 width: 50.0,
                                 height: 50.0,
                                 fit: BoxFit.cover,
                               ),
                             ),
-                            const Column(
+                            Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "Ayam Geprek",
-                                  style: TextStyle(
+                                  products.name,
+                                  style: const TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.w600),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 2,
                                 ),
                                 Text(
-                                  "Rp.15.000",
-                                  style: TextStyle(
+                                  "Rp${products.price}",
+                                  style: const TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.w500),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 2,
                                 ),
                                 SizedBox(
                                   width: 240,
-                                  child: Text("Ayam Geprek enak banget"),
+                                  child: Text(products.description),
                                 ),
                               ],
                             ),
@@ -193,10 +195,10 @@ class ListProductView extends StatefulWidget {
                                   color: Colors.yellow[200],
                                   borderRadius: const BorderRadius.all(
                                       Radius.circular(5))),
-                              child: const Center(
+                              child: Center(
                                 child: Text(
-                                  "Available",
-                                  style: TextStyle(
+                                  products.availability ? "Tersedia" : "Kosong",
+                                  style: const TextStyle(
                                       color: Colors.black,
                                       fontSize: 10,
                                       fontWeight: FontWeight.w500),

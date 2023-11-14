@@ -1,6 +1,6 @@
 {
     "modules": [
-        "owner_wallet"
+        "registrasi_store"
     ],
     "module_directory_name": "owner",
     "experimental_mode": false,
