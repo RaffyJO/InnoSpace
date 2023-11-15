@@ -6,50 +6,50 @@ class MenuuserView extends StatefulWidget {
 
   Widget build(context, MenuuserController controller) {
     String textbookorskip;
-    String price;
+    int price;
     if (controller.total == 0) {
       textbookorskip = "Skip";
-      price = "0";
+      price = controller.total * 20000;
     } else {
       textbookorskip = "Next";
-      price = "100000";
+      price = controller.total * 20000;
     }
-    final List<Map<String, String>> products = [
+    final List<Map<String, dynamic>> products = [
       {
         "photo":
             "https://awsimages.detik.net.id/community/media/visual/2021/04/22/5-makanan-enak-dari-indonesia-dan-malaysia-yang-terkenal-enak-5.jpeg?w=600&q=90",
         "product_name": "Nasi Goreng",
-        "price": "15000"
+        "price": 20000
       },
       {
         "photo":
             "https://www.indonesia.travel/content/dam/indtravelrevamp/en/trip-ideas/the-ultimate-guide-to-must-try-indonesian-food/bakso.jpg",
         "product_name": "Bakso",
-        "price": "12000"
+        "price": 12000
       },
       {
         "photo":
             "https://rebornprojectmedia.com/wp-content/uploads/2019/03/resep-martabak-manis.jpg",
         "product_name": "Terang Bulan",
-        "price": "19000"
+        "price": 19000
       },
       {
         "photo":
             "https://paragram.id/upload/media/entries/2022-03/22/34695-1-812ff7af7dbf599c0a5b41b6a6b2c374.jpg",
         "product_name": "sate Ayam",
-        "price": "25000"
+        "price": 25000
       },
       {
         "photo":
             "https://i0.wp.com/www.acozykitchen.com/wp-content/uploads/2017/04/IcedMatchaLatte-1.jpg?w=720&ssl=1",
         "product_name": "Matcha",
-        "price": "12000"
+        "price": 12000
       },
       {
         "photo":
             "https://storyblok-cdn.ef.com/f/60990/960x1280/6ecfae7124/kopi-susu.jpg",
         "product_name": "Ice Coffee",
-        "price": "14000"
+        "price": 14000
       },
     ];
     controller.view = this;
@@ -134,7 +134,7 @@ class MenuuserView extends StatefulWidget {
                       height: 4.0,
                     ),
                     Text(
-                      item["price"]!,
+                      "Rp${item["price"]!}",
                       style: const TextStyle(
                         fontSize: 16.0,
                         fontWeight: FontWeight.bold,
@@ -152,7 +152,7 @@ class MenuuserView extends StatefulWidget {
                           InkWell(
                             onTap: controller.kurang,
                             child: const Icon(
-                              Icons.exposure_minus_1,
+                              Icons.remove,
                               size: 35,
                             ),
                           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
+import 'package:intl/intl.dart';
 
 class NavbarupSpaceView extends StatefulWidget {
   final int initialTabIndex;
@@ -8,10 +9,9 @@ class NavbarupSpaceView extends StatefulWidget {
 
   Widget build(context, NavbarupSpaceController controller) {
     const String location = 'Malang';
-    final String currentDate =
-        '${DateTime.now().day}/${DateTime.now().month}/${DateTime.now().year}';
+    final String currentDate = DateFormat('dd MMM').format(DateTime.now());
     final String currentTime = TimeOfDay.now().format(context);
-    final String currentTimelast = 'Now :$currentTime';
+    final String currentTimelast = currentTime;
     controller.view = this;
 
     return DefaultTabController(
@@ -36,9 +36,14 @@ class NavbarupSpaceView extends StatefulWidget {
                     Icons.location_on,
                   ),
                 ),
-                _buildCard(
-                  currentDate,
-                  Icons.calendar_today,
+                InkWell(
+                  onTap: () {
+                    controller.datePicker();
+                  },
+                  child: _buildCard(
+                    currentDate,
+                    Icons.calendar_today,
+                  ),
                 ),
                 _buildCard(
                   currentTimelast,
@@ -73,7 +78,7 @@ class NavbarupSpaceView extends StatefulWidget {
 
   Widget _buildCard(String data, IconData icon) {
     return Card(
-      color: Colors.grey[300],
+      color: Colors.grey[200],
       child: Container(
         height: 35,
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(16)),
@@ -91,7 +96,10 @@ class NavbarupSpaceView extends StatefulWidget {
                 const SizedBox(height: 3),
                 Text(
                   data,
-                  style: const TextStyle(color: Colors.black),
+                  style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600),
                 ),
               ],
             ),

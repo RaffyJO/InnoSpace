@@ -56,18 +56,18 @@ class InnoworkView extends StatefulWidget {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              Column(
-                                children: [
-                                  Text(
-                                    "Recently Book",
-                                    style: TextStyle(
-                                      fontSize: screenWidth *
-                                          0.03, // Adjust the font size
-                                    ),
-                                  ),
-                                  SizedBox(height: screenWidth * 0.01),
-                                ],
-                              ),
+                              // Column(
+                              //   children: [
+                              //     Text(
+                              //       "Recently Book",
+                              //       style: TextStyle(
+                              //         fontSize: screenWidth *
+                              //             0.03, // Adjust the font size
+                              //       ),
+                              //     ),
+                              //     SizedBox(height: screenWidth * 0.01),
+                              //   ],
+                              // ),
                             ],
                           ),
                           Row(
@@ -96,7 +96,7 @@ class InnoworkView extends StatefulWidget {
                                 children: [
                                   const Icon(Icons.location_on),
                                   SizedBox(height: screenWidth * 0.01),
-                                  const Text("2.9 km"),
+                                  const Text("0.9 km"),
                                 ],
                               ),
                             ],
@@ -182,18 +182,18 @@ class InnoworkView extends StatefulWidget {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              Column(
-                                children: [
-                                  Text(
-                                    "Recently Book",
-                                    style: TextStyle(
-                                      fontSize: screenWidth *
-                                          0.03, // Adjust the font size
-                                    ),
-                                  ),
-                                  SizedBox(height: screenWidth * 0.01),
-                                ],
-                              ),
+                              // Column(
+                              //   children: [
+                              //     Text(
+                              //       "Recently Book",
+                              //       style: TextStyle(
+                              //         fontSize: screenWidth *
+                              //             0.03, // Adjust the font size
+                              //       ),
+                              //     ),
+                              //     SizedBox(height: screenWidth * 0.01),
+                              //   ],
+                              // ),
                             ],
                           ),
                           Row(
@@ -222,7 +222,7 @@ class InnoworkView extends StatefulWidget {
                                 children: [
                                   const Icon(Icons.location_on),
                                   SizedBox(height: screenWidth * 0.01),
-                                  const Text("0.2 km"),
+                                  const Text("2.2 km"),
                                 ],
                               ),
                             ],

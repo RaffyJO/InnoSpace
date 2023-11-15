@@ -55,13 +55,13 @@ class InnoworkDetailView extends StatefulWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text(
-                    "Recently Book",
-                    style: TextStyle(
-                      fontSize: 17.0,
-                    ),
-                  ),
-                  SizedBox(height: 10),
+                  // Text(
+                  //   "Recently Book",
+                  //   style: TextStyle(
+                  //     fontSize: 17.0,
+                  //   ),
+                  // ),
+                  SizedBox(height: 5),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -315,7 +315,7 @@ class InnoworkDetailView extends StatefulWidget {
       case "wifi":
         return Icons.wifi;
       case "restroom":
-        return Icons.room;
+        return Icons.wc;
       case "fastfood":
         return Icons.fastfood;
       case "local_parking":

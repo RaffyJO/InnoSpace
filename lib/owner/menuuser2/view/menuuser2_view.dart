@@ -152,7 +152,7 @@ class Menuuser2View extends StatefulWidget {
                           InkWell(
                             onTap: controller.kurang,
                             child: const Icon(
-                              Icons.exposure_minus_1,
+                              Icons.remove,
                               size: 35,
                             ),
                           ),

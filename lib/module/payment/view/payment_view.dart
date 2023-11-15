@@ -16,7 +16,14 @@ class PaymentView extends StatefulWidget {
           style: TextStyle(color: Colors.black, fontSize: 17),
         ),
         centerTitle: true,
-        titleSpacing: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          color: Colors.black, // Icon "back"
+          onPressed: () {
+            // Fungsi yang dipanggil saat tombol "back" ditekan
+            Navigator.of(context).pop();
+          },
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -89,24 +96,22 @@ class PaymentView extends StatefulWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 5),
+                    const SizedBox(height: 10),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
                           "Tables",
                           style: TextStyle(
-                            fontSize: 18.0,
+                            fontSize: 15.0,
                           ),
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             const Text(
-                              "2 (4 sheets)",
-                              style: TextStyle(
-                                fontSize: 17.0,
-                              ),
+                              "1 (4 sheets)",
+                              style: TextStyle(fontWeight: FontWeight.w600),
                             ),
                             Checkbox(
                               value: controller.isSelectedt,
@@ -116,10 +121,8 @@ class PaymentView extends StatefulWidget {
                               width: 30,
                             ),
                             const Text(
-                              "4 (8 sheets)",
-                              style: TextStyle(
-                                fontSize: 17.0,
-                              ),
+                              "2 (8 sheets)",
+                              style: TextStyle(fontWeight: FontWeight.w600),
                             ),
                             Checkbox(
                               value: controller.isSelectedt2,

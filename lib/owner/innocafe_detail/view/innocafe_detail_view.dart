@@ -35,7 +35,7 @@ class InnocafeDetailView extends StatefulWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(16.0),
                       child: Image.network(
-                        "https://cdns.klimg.com/merdeka.com/i/w/news/2022/05/07/1433082/content_images/670x335/20220507200741-12-nakoa-cafe-001-tantri-setyorini.jpg",
+                        "https://lh3.googleusercontent.com/p/AF1QipPy2oI7s7s6i3WQa3TNCNKlCtPtZp_76vRzlM-G=s1360-w1360-h1020",
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -49,30 +49,30 @@ class InnocafeDetailView extends StatefulWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Nakoa Cafe Suhat",
+                    "Piskip",
                     style: TextStyle(
                       fontSize: 25.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text(
-                    "Recently Book",
-                    style: TextStyle(
-                      fontSize: 17.0,
-                    ),
-                  ),
-                  SizedBox(height: 10),
+                  // Text(
+                  //   "Recently Book",
+                  //   style: TextStyle(
+                  //     fontSize: 17.0,
+                  //   ),
+                  // ),
+                  SizedBox(height: 5),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Jl. Puncak Borobudur G502, Griya Shanta Blk.J",
+                        "Jl. Pisang Kipas No.6, Jatimulyo, ",
                         style: TextStyle(
                           fontSize: 14.0,
                         ),
                       ),
                       Text(
-                        "No.216, Mojolangu, Kec. Lowokwaru, ",
+                        "Kec. Lowokwaru, Kota Malang, Jawa Timur 65141",
                         style: TextStyle(
                           fontSize: 14.0,
                         ),
@@ -165,7 +165,7 @@ class InnocafeDetailView extends StatefulWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20.0),
                         child: Image.network(
-                          "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2hXYY1sSmpc97TTWEWAc9lcWq6QzZGMScOqmWp2VlxItwAti8K-gcqCwtgn-AgL2UDlZETqwRtOZUawItz8qfh1-Q6mHg0u36UNV_GxDnFR6AsSSRLltk1-lK6EtlBxupAPqVmHO3A-XnWFiMflS8254UGTn3mX9WfsBfItylS22Zwv_h8bBmSKK7/s650/indoor%20nakoa%20cafe%20suhat%20malang.jpg",
+                          "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiqG_nmnBisGx3RnRJBp3ZjU0Ae8X9bhBtYTTVUHZDGEVFVp1xl9p4sBh5gVUSE9EiNd5zXjvV_PGDU4-zKPrPsz8Orw60eqxGW7np3kDz7bmB4myFO-CopbLoMSP5nrZe4JxpD37zDBWcV47eWVdy1WR8VaKK5yhoYRkPnM5Ruo_QPCyLRJPAvuWy5/s16000/cafe%20di%20suhat%20malang.jpg",
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -203,7 +203,7 @@ class InnocafeDetailView extends StatefulWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "In Door",
+                    "Out Door",
                     style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
@@ -275,7 +275,7 @@ class InnocafeDetailView extends StatefulWidget {
                     height: 5,
                   ),
                   Text(
-                    "IDR 100.000",
+                    "IDR 0",
                     style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,
@@ -301,7 +301,7 @@ class InnocafeDetailView extends StatefulWidget {
                 );
               },
               child: Text(
-                "Book Now".toUpperCase(),
+                "Order Food".toUpperCase(),
               ),
             ),
           ],
@@ -315,7 +315,7 @@ class InnocafeDetailView extends StatefulWidget {
       case "wifi":
         return Icons.wifi;
       case "restroom":
-        return Icons.room;
+        return Icons.wc;
       case "fastfood":
         return Icons.fastfood;
       case "local_parking":

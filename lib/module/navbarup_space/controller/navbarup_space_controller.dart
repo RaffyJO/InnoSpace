@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
+import 'package:innospace/shared/widget/form/date_picker/datepicker.dart';
 
 import '../view/navbarup_space_view.dart';
 
@@ -126,5 +127,14 @@ class NavbarupSpaceController extends State<NavbarupSpaceView> {
       print('Lokasi yang dipilih: $selectedLocation');
       // Lakukan sesuatu dengan lokasi yang dipilih
     }
+  }
+
+  void datePicker() {
+    DateTime date;
+    QDatePicker(
+        label: "Date",
+        onChanged: (value) {
+          date = value;
+        });
   }
 }

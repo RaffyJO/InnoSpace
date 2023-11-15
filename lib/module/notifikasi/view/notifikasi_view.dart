@@ -18,13 +18,13 @@ class NotifikasiView extends StatefulWidget {
             "Mohon Maaf atas ketidaknyamanan, Maintance dilakukan Pada tanggal 23 Desember 2023"
       },
       {
-        "name": "Promo Khusus pengguna baru",
+        "name": "Promo Khusus Pengguna Baru",
         "deskripsi":
-            "Kepada Pengguna baru, Pasti Diskon 50% jika kamu mememesan sekarang"
+            "Kepada Pengguna baru, Pasti Diskon 50% jika kamu memesan sekarang"
       },
       {
-        "name": "Terimakasih sudah mendaftar InnoSpcae",
-        "deskripsi": "untuk pengguna baru dimohon untuk melengkapi Data diri"
+        "name": "Terimakasih Sudah Mendaftar InnoSpace",
+        "deskripsi": "Untuk pengguna baru dimohon untuk melengkapi Data diri"
       },
       {"name": "Minuman", "deskripsi": "local_drink"},
       {"name": "Coffee", "deskripsi": "coffee"},

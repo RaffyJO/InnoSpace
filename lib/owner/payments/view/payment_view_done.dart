@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
+import 'package:intl/intl.dart';
 
 class PaymentsViewDetails extends StatefulWidget {
   const PaymentsViewDetails({Key? key}) : super(key: key);
@@ -13,6 +14,8 @@ class PaymentsViewDetails extends StatefulWidget {
 class _PaymentsViewDetailsState extends State<PaymentsViewDetails> {
   @override
   Widget build(BuildContext context) {
+    String formattedDate = DateFormat('dd MMM yyyy').format(DateTime.now());
+    String formattedTime = DateFormat('HH:mm:ss').format(DateTime.now());
     return Scaffold(
       body: Center(
         child: Container(
@@ -66,12 +69,11 @@ class _PaymentsViewDetailsState extends State<PaymentsViewDetails> {
               const SizedBox(
                 height: 30,
               ),
-              const Center(
+              Center(
                 child: Text(
-                  "24/10/2023 16:30:21",
-                  style: TextStyle(
-                    fontSize: 20.0,
-                  ),
+                  "$formattedDate - $formattedTime",
+                  style: const TextStyle(
+                      fontSize: 20.0, fontWeight: FontWeight.w600),
                 ),
               ),
             ],
