@@ -14,9 +14,9 @@ class InnocoinView extends StatefulWidget {
         foregroundColor: Colors.black,
         centerTitle: true,
         title: const Text(
-          "Coin",
+          "InnoCoin",
           style: TextStyle(
-            fontSize: 21.0,
+            fontSize: 20.0,
             color: Colors.black,
           ),
         ),
@@ -41,8 +41,9 @@ class InnocoinView extends StatefulWidget {
                         ),
                       ),
                       child: const Padding(
-                        padding: EdgeInsets.fromLTRB(25, 25, 25, 0),
+                        padding: EdgeInsets.fromLTRB(25, 10, 25, 10),
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
@@ -59,7 +60,7 @@ class InnocoinView extends StatefulWidget {
                             Padding(
                               padding: EdgeInsets.only(left: 20),
                               child: Text(
-                                "Rp. 100.000",
+                                "10.000 Coins",
                                 style: TextStyle(
                                   fontSize: 40.0,
                                   color: Colors.white,
@@ -209,7 +210,7 @@ class InnocoinView extends StatefulWidget {
                                     ),
                                   ),
                                   title: const Text(
-                                    "1 InnoCoins setara dengan Rp 1 ",
+                                    "1 InnoCoin setara dengan Rp 1",
                                     style: TextStyle(fontSize: 14),
                                   ),
                                 ),

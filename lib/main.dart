@@ -23,6 +23,6 @@ class MainApp extends StatelessWidget {
               ),
         },
         debugShowCheckedModeBanner: false,
-        home: OwnerDashboardView());
+        home: const LoginPageView());
   }
 }

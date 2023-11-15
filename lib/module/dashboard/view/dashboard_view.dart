@@ -24,25 +24,49 @@ class DashboardView extends StatefulWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15, right: 15),
-                      child: Container(
-                        margin: const EdgeInsets.only(top: 30),
-                        child: const Text(
-                          "InnoSpace",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 17.0,
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 15, right: 15),
+                          child: Container(
+                            margin: const EdgeInsets.only(top: 30),
+                            child: const Text(
+                              "InnoSpace",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 17.0,
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                        Container(
+                          margin: const EdgeInsets.fromLTRB(0, 10, 10, 0),
+                          child: IconButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const NotifikasiView(),
+                                ),
+                              );
+                            },
+                            icon: const Icon(
+                              Icons.notifications_active_outlined,
+                              size: 30.0,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     Padding(
                       padding:
                           const EdgeInsets.only(top: 15, left: 15, right: 15),
                       child: Container(
                         child: const Text(
-                          "Good afternoon, Raffy",
+                          "Selamat Sore, Raffy",
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 15.0,
@@ -55,7 +79,7 @@ class DashboardView extends StatefulWidget {
                           const EdgeInsets.only(top: 5, left: 15, right: 15),
                       child: Container(
                         child: const Text(
-                          "What kind of space do you need?",
+                          "Mau ngumpul dimana hari ini?",
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 15.0,
@@ -212,11 +236,11 @@ class DashboardView extends StatefulWidget {
                             padding: const EdgeInsets.all(5.0),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(10),
-                              child: Image.asset(
+                              child: Image.network(
                                 imageUrls[index],
                                 width: 300.0,
                                 height: 120.0,
-                                fit: BoxFit.cover,
+                                fit: BoxFit.fill,
                               ),
                             ));
                       },
@@ -362,9 +386,9 @@ class DashboardView extends StatefulWidget {
   }
 
   final List<String> imageUrls = [
-    "assets/aset/Promo.png",
-    "assets/aset/Promo.png",
-    "assets/aset/Promo.png",
+    "https://static.vecteezy.com/system/resources/previews/000/178/337/original/flash-sale-promotional-banner-template-for-marketing-vector.jpg",
+    "https://static.vecteezy.com/system/resources/previews/000/175/898/original/vector-super-offer-advertising-banner-template-with-colorful-waves.jpg",
+    "https://static.vecteezy.com/system/resources/previews/000/179/348/original/stylish-vector-banner-design-with-offer-details-for-advertising.jpg",
     // Tambahkan URL gambar lainnya di sini sesuai kebutuhan
   ];
 

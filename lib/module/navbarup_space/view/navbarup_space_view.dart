@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
+import 'package:intl/intl.dart';
 
 class NavbarupSpaceView extends StatefulWidget {
   final int initialTabIndex;
@@ -7,6 +8,10 @@ class NavbarupSpaceView extends StatefulWidget {
       : super(key: key);
 
   Widget build(context, NavbarupSpaceController controller) {
+    const String location = 'Malang';
+    final String currentDate = DateFormat('dd MMM').format(DateTime.now());
+    final String currentTime = TimeOfDay.now().format(context);
+    final String currentTimelast = currentTime;
     controller.view = this;
 
     return DefaultTabController(
@@ -14,17 +19,43 @@ class NavbarupSpaceView extends StatefulWidget {
       initialIndex: initialTabIndex,
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
+          toolbarHeight: 70,
           backgroundColor: Colors.white,
-          title: const Text(
-            "Order Status",
-            style: TextStyle(color: Colors.black, fontSize: 17),
+          title: Padding(
+            padding: const EdgeInsets.fromLTRB(1, 7, 1, 1),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                InkWell(
+                  onTap: () {
+                    controller.popup();
+                  },
+                  child: _buildCard(
+                    location,
+                    Icons.location_on,
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    controller.date(context);
+                  },
+                  child: _buildCard(
+                    currentDate,
+                    Icons.calendar_today,
+                  ),
+                ),
+                _buildCard(
+                  currentTimelast,
+                  Icons.access_time,
+                ),
+              ],
+            ),
           ),
-          centerTitle: true,
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
-            color: Colors.black, // Icon "back"
+            color: Colors.black,
             onPressed: () {
-              // Fungsi yang dipanggil saat tombol "back" ditekan
               Navigator.of(context).pop();
             },
           ),
@@ -40,6 +71,39 @@ class NavbarupSpaceView extends StatefulWidget {
         ),
         body: TabBarView(
           children: _tabs,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCard(String data, IconData icon) {
+    return Card(
+      color: Colors.grey[200],
+      child: Container(
+        height: 35,
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(16)),
+        padding: const EdgeInsets.fromLTRB(7, 7, 7, 7),
+        child: Row(
+          children: [
+            Icon(
+              icon,
+              color: Colors.black,
+            ),
+            const SizedBox(width: 5),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 3),
+                Text(
+                  data,
+                  style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

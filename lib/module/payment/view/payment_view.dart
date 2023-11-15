@@ -16,7 +16,14 @@ class PaymentView extends StatefulWidget {
           style: TextStyle(color: Colors.black, fontSize: 17),
         ),
         centerTitle: true,
-        titleSpacing: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          color: Colors.black, // Icon "back"
+          onPressed: () {
+            // Fungsi yang dipanggil saat tombol "back" ditekan
+            Navigator.of(context).pop();
+          },
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -24,7 +31,7 @@ class PaymentView extends StatefulWidget {
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
-              height: 300,
+              height: 330,
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -89,14 +96,39 @@ class PaymentView extends StatefulWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 5),
-                    const Column(
+                    const SizedBox(height: 10),
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Room"),
-                        Text(
-                          "Outdoor cafe: 4 seats, 1 tables",
-                          style: TextStyle(fontWeight: FontWeight.w600),
+                        const Text(
+                          "Tables",
+                          style: TextStyle(
+                            fontSize: 15.0,
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            const Text(
+                              "1 (4 sheets)",
+                              style: TextStyle(fontWeight: FontWeight.w600),
+                            ),
+                            Checkbox(
+                              value: controller.isSelectedt,
+                              onChanged: controller.onChangedt,
+                            ),
+                            const SizedBox(
+                              width: 30,
+                            ),
+                            const Text(
+                              "2 (8 sheets)",
+                              style: TextStyle(fontWeight: FontWeight.w600),
+                            ),
+                            Checkbox(
+                              value: controller.isSelectedt2,
+                              onChanged: controller.onChangedt2,
+                            )
+                          ],
                         ),
                       ],
                     ),

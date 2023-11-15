@@ -56,18 +56,18 @@ class InnocafeView extends StatefulWidget {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              Column(
-                                children: [
-                                  Text(
-                                    "Recently Book",
-                                    style: TextStyle(
-                                      fontSize: screenWidth *
-                                          0.03, // Adjust the font size
-                                    ),
-                                  ),
-                                  SizedBox(height: screenWidth * 0.01),
-                                ],
-                              ),
+                              // Column(
+                              //   children: [
+                              //     Text(
+                              //       "Recently Book",
+                              //       style: TextStyle(
+                              //         fontSize: screenWidth *
+                              //             0.03, // Adjust the font size
+                              //       ),
+                              //     ),
+                              //     SizedBox(height: screenWidth * 0.01),
+                              //   ],
+                              // ),
                             ],
                           ),
                           Row(
@@ -182,18 +182,18 @@ class InnocafeView extends StatefulWidget {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              Column(
-                                children: [
-                                  Text(
-                                    "Recently Book",
-                                    style: TextStyle(
-                                      fontSize: screenWidth *
-                                          0.03, // Adjust the font size
-                                    ),
-                                  ),
-                                  SizedBox(height: screenWidth * 0.01),
-                                ],
-                              ),
+                              // Column(
+                              //   children: [
+                              //     Text(
+                              //       "Recently Book",
+                              //       style: TextStyle(
+                              //         fontSize: screenWidth *
+                              //             0.03, // Adjust the font size
+                              //       ),
+                              //     ),
+                              //     SizedBox(height: screenWidth * 0.01),
+                              //   ],
+                              // ),
                             ],
                           ),
                           Row(

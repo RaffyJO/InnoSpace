@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
-import 'package:innospace/owner/payments/view/payment_view_done.dart';
 
 class PaymentsView extends StatefulWidget {
   const PaymentsView({Key? key}) : super(key: key);
@@ -54,18 +53,14 @@ class PaymentsView extends StatefulWidget {
               ),
               const Center(
                 child: Text(
-                  "Scan kode QR ini pada kasir ",
-                  style: TextStyle(
-                    fontSize: 20.0,
-                  ),
+                  "Scan kode QR ini",
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600),
                 ),
               ),
               const Center(
                 child: Text(
                   "untuk melakukan proses pembayaran",
-                  style: TextStyle(
-                    fontSize: 20.0,
-                  ),
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600),
                 ),
               ),
             ],

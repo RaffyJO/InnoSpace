@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
 
-class SignupPageView extends StatefulWidget {
-  const SignupPageView({Key? key}) : super(key: key);
+class DatadiriView extends StatefulWidget {
+  const DatadiriView({Key? key}) : super(key: key);
 
-  Widget build(context, SignupPageController controller) {
+  Widget build(context, DatadiriController controller) {
     controller.view = this;
 
     return Theme(
@@ -45,31 +45,6 @@ class SignupPageView extends StatefulWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Column(
-                        children: [
-                          const Text(
-                            "SignUp Page",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20),
-                          ),
-                          const SizedBox(height: 16.0 * 2),
-                          Row(
-                            children: [
-                              const Spacer(),
-                              Expanded(
-                                flex: 8,
-                                child: Image.asset(
-                                  "assets/aset/logo.png",
-                                  height: 250,
-                                  width: 250,
-                                ),
-                              ),
-                              const Spacer(),
-                            ],
-                          ),
-                          const SizedBox(height: 16.0 * 2),
-                        ],
-                      ),
                       Row(
                         children: [
                           const Spacer(),
@@ -85,7 +60,24 @@ class SignupPageView extends StatefulWidget {
                                         const Color.fromRGBO(255, 175, 0, 50),
                                     onSaved: (email) {},
                                     decoration: const InputDecoration(
-                                      hintText: "Your email",
+                                      hintText: "Nama Depan",
+                                      prefixIcon: Padding(
+                                        padding: EdgeInsets.all(16.0),
+                                        child: Icon(Icons.person),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 16,
+                                  ),
+                                  TextFormField(
+                                    keyboardType: TextInputType.emailAddress,
+                                    textInputAction: TextInputAction.next,
+                                    cursorColor:
+                                        const Color.fromRGBO(255, 175, 0, 50),
+                                    onSaved: (email) {},
+                                    decoration: const InputDecoration(
+                                      hintText: "Nama Belakang",
                                       prefixIcon: Padding(
                                         padding: EdgeInsets.all(16.0),
                                         child: Icon(Icons.person),
@@ -102,10 +94,10 @@ class SignupPageView extends StatefulWidget {
                                           const Color.fromRGBO(255, 175, 0, 50),
                                       onSaved: (username) {},
                                       decoration: const InputDecoration(
-                                        hintText: "username",
+                                        hintText: "No Telephone",
                                         prefixIcon: Padding(
                                           padding: EdgeInsets.all(16.0),
-                                          child: Icon(Icons.person),
+                                          child: Icon(Icons.numbers_outlined),
                                         ),
                                       ),
                                     ),
@@ -118,10 +110,10 @@ class SignupPageView extends StatefulWidget {
                                     decoration: const InputDecoration(
                                       iconColor:
                                           Color.fromRGBO(255, 175, 0, 50),
-                                      hintText: "Your password",
+                                      hintText: "Tanggal Lahir",
                                       prefixIcon: Padding(
                                         padding: EdgeInsets.all(16.0),
-                                        child: Icon(Icons.lock),
+                                        child: Icon(Icons.date_range_outlined),
                                       ),
                                     ),
                                   ),
@@ -140,10 +132,12 @@ class SignupPageView extends StatefulWidget {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    const DatadiriView()));
+                                                    const FloatMainNavigationView(
+                                                        initialSelectedIndex:
+                                                            0)));
                                       },
-                                      child: Text(
-                                        "Next".toUpperCase(),
+                                      child: const Text(
+                                        "Sign Up",
                                       ),
                                     ),
                                   ),
@@ -166,5 +160,5 @@ class SignupPageView extends StatefulWidget {
   }
 
   @override
-  State<SignupPageView> createState() => SignupPageController();
+  State<DatadiriView> createState() => DatadiriController();
 }
