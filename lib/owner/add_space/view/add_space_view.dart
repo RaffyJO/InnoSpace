@@ -37,7 +37,7 @@ class AddSpaceView extends StatefulWidget {
                 // validator: Validator.required,
                 value: null,
                 onChanged: (value) {
-                  // controller.photo = (value);
+                  controller.imgUrl = (value);
                 },
               ),
             ),
@@ -49,56 +49,71 @@ class AddSpaceView extends StatefulWidget {
             Container(
               margin: const EdgeInsets.only(
                   top: 5, bottom: 20, left: 15, right: 15),
-              child: const Column(
+              child: Column(
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       TextField(
                         // controller: _namaController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                             labelText: 'Name Room',
                             hintText: "Masukkan Nama Room..."),
+                        onChanged: (value) {
+                          controller.nama = value;
+                        },
                       ),
                       Row(
                         children: [
                           SizedBox(
                             width: 50,
                             child: TextField(
-                              decoration: InputDecoration(
+                              decoration: const InputDecoration(
                                 labelText: 'Table',
                                 hintText: '0',
                               ),
+                              onChanged: (value) {
+                                controller.table = int.tryParse(value)!;
+                              },
                               keyboardType: TextInputType.number,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 20,
                           ),
                           SizedBox(
                             width: 50,
                             child: TextField(
-                              decoration: InputDecoration(
+                              decoration: const InputDecoration(
                                 labelText: 'Seats',
                                 hintText: '0',
                               ),
+                              onChanged: (value) {
+                                controller.chair = int.tryParse(value)!;
+                              },
                               keyboardType: TextInputType.number,
                             ),
                           ),
                         ],
                       ),
                       TextField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'Price',
                           hintText: "Masukkan Harga...",
                         ),
+                        onChanged: (value) {
+                          controller.price = int.tryParse(value)!;
+                        },
                         keyboardType: TextInputType.number,
                       ),
                       TextField(
                         // controller: _namaController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                             labelText: 'Description',
                             hintText: "Masukkan Deskripsi..."),
+                        onChanged: (value) {
+                          controller.description = (value);
+                        },
                       ),
                     ],
                   )
@@ -333,7 +348,7 @@ class AddSpaceView extends StatefulWidget {
                           minimumSize: const Size(400, 40),
                         ),
                         onPressed: () {
-                          Navigator.pop(context);
+                          controller.saveProduct();
                         },
                         child: const Text(
                           "Save",

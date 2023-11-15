@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
+import 'package:innospace/entities/order.dart';
 
 class OwnerDashboardView extends StatefulWidget {
   OwnerDashboardView({Key? key}) : super(key: key);
@@ -48,10 +49,13 @@ class OwnerDashboardView extends StatefulWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const CircleAvatar(
-                      backgroundColor: Colors.blue,
+                      backgroundColor: Colors.white,
                       radius: 30.0,
-                      backgroundImage: NetworkImage(
-                        "",
+                      child: Image(
+                        image: NetworkImage(
+                          "https://taplink.st/a/9/1/7/6/9a190c.png?1",
+                        ),
+                        fit: BoxFit.cover,
                       ),
                     ),
                     const SizedBox(
@@ -60,7 +64,7 @@ class OwnerDashboardView extends StatefulWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "KopiSip",
+                            "Piskip",
                             style: TextStyle(fontWeight: FontWeight.w600),
                           ),
                           SizedBox(
@@ -127,14 +131,15 @@ class OwnerDashboardView extends StatefulWidget {
                           height: 50,
                           width: 90,
                           color: Colors.grey[300],
-                          child: const Column(
+                          child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "3",
-                                style: TextStyle(fontWeight: FontWeight.w500),
+                                orderList.length.toString(),
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.w500),
                               ),
-                              Text("Booking"),
+                              const Text("Booking"),
                             ],
                           ),
                         ),
@@ -158,7 +163,7 @@ class OwnerDashboardView extends StatefulWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "3",
+                                "1",
                                 style: TextStyle(fontWeight: FontWeight.w500),
                               ),
                               Text("Cancel"),
@@ -185,7 +190,7 @@ class OwnerDashboardView extends StatefulWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "3",
+                                "1",
                                 style: TextStyle(fontWeight: FontWeight.w500),
                               ),
                               Text("Done"),
@@ -315,7 +320,7 @@ class OwnerDashboardView extends StatefulWidget {
                                     padding: const EdgeInsets.all(5.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(5),
-                                      child: Image.asset(
+                                      child: Image.network(
                                         imageUrls[index],
                                         width: 350.0,
                                         height: 100.0,
@@ -333,9 +338,9 @@ class OwnerDashboardView extends StatefulWidget {
   }
 
   final List<String> imageUrls = [
-    "assets/aset/Promo.png",
-    "assets/aset/Promo.png",
-    "assets/aset/Promo.png",
+    "https://taptalk.io/blog/wp-content/uploads/2022/09/Strategi-Pemasaran-scaled.jpg",
+    "https://kledo.com/blog/wp-content/uploads/2022/11/strategi-penjualan-online.jpg",
+    "https://thumbs.dreamstime.com/b/stock-market-word-concepts-banner-long-term-money-investment-strategy-infographics-linear-icons-blue-background-isolated-214219826.jpg",
     // Tambahkan URL gambar lainnya di sini sesuai kebutuhan
   ];
 

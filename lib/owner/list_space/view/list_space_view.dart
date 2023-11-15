@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
+import 'package:innospace/entities/space.dart';
 
 class ListSpaceView extends StatefulWidget {
   const ListSpaceView({Key? key}) : super(key: key);
@@ -29,8 +30,9 @@ class ListSpaceView extends StatefulWidget {
           child: Stack(
             children: [
               ListView.builder(
-                  itemCount: 3,
+                  itemCount: spaceList.length,
                   itemBuilder: (context, index) {
+                    Space space = spaceList[index];
                     return Padding(
                       padding:
                           const EdgeInsets.only(left: 15, right: 15, top: 15),
@@ -47,12 +49,20 @@ class ListSpaceView extends StatefulWidget {
                           children: [
                             ClipRRect(
                               borderRadius: BorderRadius.circular(20),
-                              child: Image.asset(
-                                "assets/aset/fotoCafe.png",
-                                width: MediaQuery.of(context).size.width,
-                                height: MediaQuery.of(context).size.width / 2,
-                                fit: BoxFit.cover,
-                              ),
+                              child: Image.network(space.imgUrl,
+                                  width: MediaQuery.of(context).size.width,
+                                  height: MediaQuery.of(context).size.width / 2,
+                                  fit: BoxFit.cover, errorBuilder:
+                                      (BuildContext context, Object exception,
+                                          StackTrace? stackTrace) {
+                                print('Error: $exception');
+                                return Image.asset(
+                                  "assets/aset/image_not_found.jpg",
+                                  width: MediaQuery.of(context).size.width,
+                                  height: MediaQuery.of(context).size.width / 2,
+                                  fit: BoxFit.cover,
+                                );
+                              }),
                             ),
                             Align(
                               alignment: Alignment.center,
@@ -64,10 +74,10 @@ class ListSpaceView extends StatefulWidget {
                                     color: Color.fromRGBO(255, 175, 0, 50),
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(15))),
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "Available",
-                                    style: TextStyle(
+                                    space.availability ? "Tersedia" : "Penuh",
+                                    style: const TextStyle(
                                         color: Colors.black,
                                         fontSize: 12,
                                         fontWeight: FontWeight.w500),
@@ -75,32 +85,33 @@ class ListSpaceView extends StatefulWidget {
                                 ),
                               ),
                             ),
-                            const Text(
-                              "Out Door",
-                              style: TextStyle(fontWeight: FontWeight.w700),
+                            Text(
+                              space.name,
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.w700),
                             ),
-                            const Row(
+                            Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  "1 Table, 4 Chair",
-                                  style: TextStyle(
+                                  "${space.table} Meja, ${space.chair} Kursi",
+                                  style: const TextStyle(
                                       fontSize: 13,
                                       fontWeight: FontWeight.w500),
                                 ),
-                                Text("Rp.100.000",
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.w600)),
+                                Text("Rp${space.price}",
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.w600)),
                               ],
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                const SizedBox(
+                                SizedBox(
                                     width: 300,
                                     child: Text(
-                                      "If you love to be outside maybe this type of place match with you",
-                                      style: TextStyle(fontSize: 13),
+                                      space.description,
+                                      style: const TextStyle(fontSize: 13),
                                     )),
                                 Align(
                                   alignment: Alignment.bottomRight,

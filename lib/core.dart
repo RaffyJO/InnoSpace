@@ -65,6 +65,8 @@ export 'package:innospace/owner/owner_wallet/view/owner_wallet_view.dart';
 export 'package:innospace/owner/payments/controller/payments_controller.dart';
 export 'package:innospace/owner/payments/view/payments_view.dart';
 export 'package:innospace/owner/payments/view/payment_view_done.dart';
+export 'package:innospace/owner/registrasi_store/controller/registrasi_store_controller.dart';
+export 'package:innospace/owner/registrasi_store/view/registrasi_store_view.dart';
 export 'package:innospace/owner/signup_page/controller/signup_page_controller.dart';
 export 'package:innospace/owner/signup_page/view/signup_page_view.dart';
 export 'package:innospace/owner/status_booking/controller/status_booking_controller.dart';

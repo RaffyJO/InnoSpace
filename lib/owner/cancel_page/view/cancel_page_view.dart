@@ -11,7 +11,7 @@ class CancelPageView extends StatefulWidget {
 
     return Scaffold(
       body: ListView.builder(
-          itemCount: 3,
+          itemCount: 1,
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
@@ -62,7 +62,7 @@ class CancelPageView extends StatefulWidget {
                       ),
                       const SizedBox(height: 7),
                       Text(
-                        "Order Id 10043464289",
+                        "Order Id 10043464357",
                         style: TextStyle(color: Colors.grey[700]),
                       ),
                       const SizedBox(
@@ -72,7 +72,7 @@ class CancelPageView extends StatefulWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "Taylor Swift",
+                            "Budiman",
                             style: TextStyle(fontWeight: FontWeight.w700),
                           ),
                           Text(
@@ -88,7 +88,7 @@ class CancelPageView extends StatefulWidget {
                       const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("5 Oct 2023"),
+                          Text("16 Oct 2023"),
                           Text("16.30 - 17.30"),
                         ],
                       ),

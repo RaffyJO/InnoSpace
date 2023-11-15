@@ -11,7 +11,7 @@ class DonePageView extends StatefulWidget {
 
     return Scaffold(
       body: ListView.builder(
-          itemCount: 3,
+          itemCount: 1,
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
@@ -62,7 +62,7 @@ class DonePageView extends StatefulWidget {
                       ),
                       const SizedBox(height: 7),
                       Text(
-                        "Order Id 10043464289",
+                        "Order Id 10043464875",
                         style: TextStyle(color: Colors.grey[700]),
                       ),
                       const SizedBox(
@@ -72,7 +72,7 @@ class DonePageView extends StatefulWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "Taylor Swift",
+                            "Susilo Wati",
                             style: TextStyle(fontWeight: FontWeight.w700),
                           ),
                           Text(
@@ -88,7 +88,7 @@ class DonePageView extends StatefulWidget {
                       const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("5 Oct 2023"),
+                          Text("2 Oct 2023"),
                           Text("16.30 - 17.30"),
                         ],
                       ),
@@ -112,9 +112,9 @@ class DonePageView extends StatefulWidget {
                             child: const Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("- Kopi"),
-                                Text("- Nasi Macan"),
-                                Text("- Thai Tea"),
+                                Text("- Matcha"),
+                                Text("- Terang Bulan"),
+                                Text("- Nasi Goreng"),
                               ],
                             ),
                           ),
@@ -125,7 +125,7 @@ class DonePageView extends StatefulWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text("x2"),
-                                Text("x3"),
+                                Text("x1"),
                                 Text("x1"),
                               ],
                             ),

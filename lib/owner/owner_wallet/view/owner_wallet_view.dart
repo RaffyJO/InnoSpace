@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
+import 'package:intl/intl.dart';
 
 import '../controller/owner_wallet_controller.dart';
 
@@ -69,7 +70,7 @@ class OwnerWalletView extends StatefulWidget {
                               height: 5,
                             ),
                             Text(
-                              "Rp200.000",
+                              "Rp100.000",
                               style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
@@ -114,7 +115,7 @@ class OwnerWalletView extends StatefulWidget {
               SizedBox(
                   height: MediaQuery.of(context).size.height - 230,
                   child: ListView.builder(
-                    itemCount: 8,
+                    itemCount: 1,
                     itemBuilder: (context, index) {
                       return Padding(
                           padding: const EdgeInsets.only(bottom: 10.0),
@@ -141,9 +142,10 @@ class OwnerWalletView extends StatefulWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      const Text(
-                                        "Jumat, 11 Agustus 2023",
-                                        style: TextStyle(
+                                      Text(
+                                        DateFormat('EEEE, dd MMMM yyyy')
+                                            .format(DateTime.now()),
+                                        style: const TextStyle(
                                           fontSize: 13,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -162,7 +164,7 @@ class OwnerWalletView extends StatefulWidget {
                                         height: 3,
                                       ),
                                       Text(
-                                        "+ Rp25.000",
+                                        "+ Rp100.000",
                                         style: TextStyle(
                                             fontSize: 16,
                                             fontWeight: FontWeight.w600,

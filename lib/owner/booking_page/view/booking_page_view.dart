@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
+import 'package:innospace/entities/order.dart';
 
 import '../controller/booking_page_controller.dart';
 
@@ -11,8 +12,9 @@ class BookingPageView extends StatefulWidget {
 
     return Scaffold(
       body: ListView.builder(
-          itemCount: 3,
+          itemCount: orderList.length,
           itemBuilder: (context, index) {
+            Order order = orderList[index];
             return Padding(
               padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
               child: Container(
@@ -37,9 +39,9 @@ class BookingPageView extends StatefulWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
-                            "InnoCafe",
-                            style: TextStyle(fontWeight: FontWeight.w700),
+                          Text(
+                            order.storeType,
+                            style: const TextStyle(fontWeight: FontWeight.w700),
                           ),
                           Container(
                             height: 15,
@@ -48,10 +50,10 @@ class BookingPageView extends StatefulWidget {
                                 color: Colors.red[100],
                                 borderRadius:
                                     const BorderRadius.all(Radius.circular(5))),
-                            child: const Center(
+                            child: Center(
                               child: Text(
-                                "Booked",
-                                style: TextStyle(
+                                order.orderStatus,
+                                style: const TextStyle(
                                     color: Colors.red,
                                     fontSize: 10,
                                     fontWeight: FontWeight.w500),
@@ -62,22 +64,22 @@ class BookingPageView extends StatefulWidget {
                       ),
                       const SizedBox(height: 7),
                       Text(
-                        "Order Id 10043464289",
+                        "Order Id ${order.id}",
                         style: TextStyle(color: Colors.grey[700]),
                       ),
                       const SizedBox(
                         height: 2,
                       ),
-                      const Row(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "Taylor Swift",
-                            style: TextStyle(fontWeight: FontWeight.w700),
+                            order.custName,
+                            style: const TextStyle(fontWeight: FontWeight.w700),
                           ),
                           Text(
-                            "Already Paid",
-                            style: TextStyle(fontWeight: FontWeight.w700),
+                            order.paymentStatus ? "Lunas" : "Belum Lunas",
+                            style: const TextStyle(fontWeight: FontWeight.w700),
                           ),
                         ],
                       ),
@@ -85,17 +87,17 @@ class BookingPageView extends StatefulWidget {
                         color: Colors.black, // Warna garis
                         thickness: 1.0, // Ketebalan garis
                       ),
-                      const Row(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("5 Oct 2023"),
-                          Text("16.30 - 17.30"),
+                          Text(order.date),
+                          Text("${order.startTime} - ${order.endTime}"),
                         ],
                       ),
                       const SizedBox(
                         height: 2,
                       ),
-                      const Text("1 Room (4 Seats)"),
+                      Text("${order.room} Room (${order.chair} Seats)"),
                       const SizedBox(
                         height: 7,
                       ),
@@ -110,12 +112,17 @@ class BookingPageView extends StatefulWidget {
                         children: [
                           Container(
                             padding: const EdgeInsets.only(left: 8, right: 5),
-                            child: const Column(
+                            child:
+                                // ListView.builder(
+                                //     itemCount: order.orders.length,
+                                //     itemBuilder: (context, index) {
+                                //       Text(order.orderStatus);
+                                //       return null;
+                                //     })
+                                const Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("- Kopi"),
-                                Text("- Nasi Macan"),
-                                Text("- Thai Tea"),
+                                Text("- Nasi Goreng"),
                               ],
                             ),
                           ),
@@ -125,31 +132,9 @@ class BookingPageView extends StatefulWidget {
                             child: const Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("x2"),
-                                Text("x3"),
-                                Text("x1"),
+                                Text("x5"),
                               ],
                             ),
-                          ),
-                          Expanded(
-                            child: Align(
-                                alignment: Alignment.bottomRight,
-                                child: Container(
-                                  height: 20,
-                                  width: 90,
-                                  decoration: const BoxDecoration(
-                                      color: Color.fromRGBO(255, 175, 0, 50),
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(5))),
-                                  child: const Center(
-                                    child: Text(
-                                      "In Progress",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w700,
-                                          fontSize: 13),
-                                    ),
-                                  ),
-                                )),
                           ),
                           // ElevatedButton(
                           //   onPressed: () {},
@@ -167,6 +152,29 @@ class BookingPageView extends StatefulWidget {
                           //   ),
                           // ),
                         ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 3),
+                        child: Expanded(
+                          child: Align(
+                              alignment: Alignment.bottomRight,
+                              child: Container(
+                                height: 20,
+                                width: 90,
+                                decoration: const BoxDecoration(
+                                    color: Color.fromRGBO(255, 175, 0, 50),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(5))),
+                                child: const Center(
+                                  child: Text(
+                                    "In Progress",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 13),
+                                  ),
+                                ),
+                              )),
+                        ),
                       ),
                     ],
                   ),
