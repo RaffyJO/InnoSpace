@@ -27,9 +27,14 @@ class NavbarupSpaceView extends StatefulWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                _buildCard(
-                  location,
-                  Icons.location_on,
+                InkWell(
+                  onTap: () {
+                    controller.popup();
+                  },
+                  child: _buildCard(
+                    location,
+                    Icons.location_on,
+                  ),
                 ),
                 _buildCard(
                   currentDate,

@@ -296,7 +296,7 @@ class InnoworkDetailView extends StatefulWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const PaymentView(),
+                    builder: (context) => const Menuuser2View(),
                   ),
                 );
               },

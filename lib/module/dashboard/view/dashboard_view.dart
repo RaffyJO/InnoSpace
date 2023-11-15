@@ -24,18 +24,42 @@ class DashboardView extends StatefulWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15, right: 15),
-                      child: Container(
-                        margin: const EdgeInsets.only(top: 30),
-                        child: const Text(
-                          "InnoSpace",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 17.0,
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 15, right: 15),
+                          child: Container(
+                            margin: const EdgeInsets.only(top: 30),
+                            child: const Text(
+                              "InnoSpace",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 17.0,
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                        Container(
+                          margin: const EdgeInsets.fromLTRB(0, 10, 10, 0),
+                          child: IconButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const NotifikasiView(),
+                                ),
+                              );
+                            },
+                            icon: const Icon(
+                              Icons.notifications_active,
+                              size: 32.0,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     Padding(
                       padding:
