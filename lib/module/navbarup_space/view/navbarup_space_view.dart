@@ -38,7 +38,7 @@ class NavbarupSpaceView extends StatefulWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    controller.datePicker();
+                    controller.date(context);
                   },
                   child: _buildCard(
                     currentDate,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
+import 'package:innospace/owner/menuuser/view/menuuser_view2.dart';
 
 class InnoworkDetailView extends StatefulWidget {
   const InnoworkDetailView({Key? key}) : super(key: key);
@@ -296,7 +297,7 @@ class InnoworkDetailView extends StatefulWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Menuuser2View(),
+                    builder: (context) => const MenuuserView2(),
                   ),
                 );
               },

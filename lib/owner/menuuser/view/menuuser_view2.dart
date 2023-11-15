@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
 
-class MenuuserView extends StatefulWidget {
-  const MenuuserView({Key? key}) : super(key: key);
+import '../controller/menuuser_controller2.dart';
 
-  Widget build(context, MenuuserController controller) {
+class MenuuserView2 extends StatefulWidget {
+  const MenuuserView2({Key? key}) : super(key: key);
+
+  Widget build(context, MenuuserController2 controller) {
     String textbookorskip;
     String totalString = "0";
-    Map total = controller.itemTotals;
 
     String price;
-    if (total == 0) {
+    if (controller.itemTotals == 0) {
       textbookorskip = "Skip";
       price = "0";
     } else {
@@ -260,5 +261,5 @@ class MenuuserView extends StatefulWidget {
   }
 
   @override
-  State<MenuuserView> createState() => MenuuserController();
+  MenuuserController2 createState() => MenuuserController2();
 }

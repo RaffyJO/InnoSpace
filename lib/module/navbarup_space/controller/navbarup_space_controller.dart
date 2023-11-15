@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:innospace/core.dart';
-import 'package:innospace/shared/widget/form/date_picker/datepicker.dart';
+import 'package:innospace/module/navbarup_space/view/datepickerbutton.dart';
 
 import '../view/navbarup_space_view.dart';
 
 class NavbarupSpaceController extends State<NavbarupSpaceView> {
   static late NavbarupSpaceController instance;
   late NavbarupSpaceView view;
+  late DateTime _selectedDate;
 
   @override
   void initState() {
     instance = this;
     super.initState();
+    _selectedDate = DateTime.now();
   }
 
   @override
@@ -129,12 +131,43 @@ class NavbarupSpaceController extends State<NavbarupSpaceView> {
     }
   }
 
-  void datePicker() {
-    DateTime date;
-    QDatePicker(
-        label: "Date",
-        onChanged: (value) {
-          date = value;
-        });
+  void date(BuildContext context) async {
+    DateTime selectedDate = DateTime.now();
+
+    await showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Tanggal'),
+          content: SizedBox(
+            height: 100,
+            child: Column(
+              children: [
+                DatePickerButton(
+                  onDateSelected: (DateTime selectedDate) {
+                    setState(() {
+                      selectedDate = selectedDate;
+                    });
+                    // Lakukan sesuatu dengan tanggal yang dipilih di sini
+                    print('Tanggal dipilih: $selectedDate');
+                    Navigator.pop(
+                        context); // Tutup dialog setelah memilih tanggal
+                  },
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(194, 255, 174, 0),
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Text("Hari ini"),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
   }
 }

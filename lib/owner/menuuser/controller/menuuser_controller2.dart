@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:innospace/core.dart';
 
-import '../view/menuuser_view.dart';
+import '../view/menuuser_view2.dart';
 
-class MenuuserController extends State<MenuuserView> {
-  static late MenuuserController instance;
-  late MenuuserView view;
+class MenuuserController2 extends State<MenuuserView2> {
+  static late MenuuserController2 instance;
+  late MenuuserView2 view;
   Map<int, int> itemTotals = {};
 
   int total = 0;
