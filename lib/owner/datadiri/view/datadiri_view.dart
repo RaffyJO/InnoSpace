@@ -60,7 +60,24 @@ class DatadiriView extends StatefulWidget {
                                         const Color.fromRGBO(255, 175, 0, 50),
                                     onSaved: (email) {},
                                     decoration: const InputDecoration(
-                                      hintText: "Nama Lengkap",
+                                      hintText: "Nama Depan",
+                                      prefixIcon: Padding(
+                                        padding: EdgeInsets.all(16.0),
+                                        child: Icon(Icons.person),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 16,
+                                  ),
+                                  TextFormField(
+                                    keyboardType: TextInputType.emailAddress,
+                                    textInputAction: TextInputAction.next,
+                                    cursorColor:
+                                        const Color.fromRGBO(255, 175, 0, 50),
+                                    onSaved: (email) {},
+                                    decoration: const InputDecoration(
+                                      hintText: "Nama Belakang",
                                       prefixIcon: Padding(
                                         padding: EdgeInsets.all(16.0),
                                         child: Icon(Icons.person),
@@ -80,7 +97,7 @@ class DatadiriView extends StatefulWidget {
                                         hintText: "No Telephone",
                                         prefixIcon: Padding(
                                           padding: EdgeInsets.all(16.0),
-                                          child: Icon(Icons.person),
+                                          child: Icon(Icons.numbers_outlined),
                                         ),
                                       ),
                                     ),
@@ -93,10 +110,10 @@ class DatadiriView extends StatefulWidget {
                                     decoration: const InputDecoration(
                                       iconColor:
                                           Color.fromRGBO(255, 175, 0, 50),
-                                      hintText: "Alamat",
+                                      hintText: "Tanggal Lahir",
                                       prefixIcon: Padding(
                                         padding: EdgeInsets.all(16.0),
-                                        child: Icon(Icons.lock),
+                                        child: Icon(Icons.date_range_outlined),
                                       ),
                                     ),
                                   ),
@@ -119,8 +136,8 @@ class DatadiriView extends StatefulWidget {
                                                         initialSelectedIndex:
                                                             0)));
                                       },
-                                      child: Text(
-                                        "SignUp".toUpperCase(),
+                                      child: const Text(
+                                        "Sign Up",
                                       ),
                                     ),
                                   ),
