@@ -6,6 +6,8 @@ import '../view/payment_view.dart';
 class PaymentController extends State<PaymentView> {
   static late PaymentController instance;
   late PaymentView view;
+  bool isSelectedt = false;
+  bool isSelectedt2 = false;
   bool isSelected = false;
   bool isSelected2 = false;
   bool isSelected3 = false;
@@ -42,6 +44,20 @@ class PaymentController extends State<PaymentView> {
       isSelected3 = newValue ?? false;
       isSelected2 = false;
       isSelected = false;
+    });
+  }
+
+  void onChangedt(bool? newValue) {
+    setState(() {
+      isSelectedt = newValue ?? false;
+      isSelectedt2 = false;
+    });
+  }
+
+  void onChangedt2(bool? newValue) {
+    setState(() {
+      isSelectedt2 = newValue ?? false;
+      isSelectedt = false;
     });
   }
 }

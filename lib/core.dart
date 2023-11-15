@@ -49,6 +49,8 @@ export 'package:innospace/owner/list_space/controller/list_space_controller.dart
 export 'package:innospace/owner/list_space/view/list_space_view.dart';
 export 'package:innospace/owner/login_page/controller/login_page_controller.dart';
 export 'package:innospace/owner/login_page/view/login_page_view.dart';
+export 'package:innospace/owner/menuuser/controller/menuuser_controller.dart';
+export 'package:innospace/owner/menuuser/view/menuuser_view.dart';
 export 'package:innospace/owner/owner_dashboard/controller/owner_dashboard_controller.dart';
 export 'package:innospace/owner/owner_dashboard/view/owner_dashboard_view.dart';
 export 'package:innospace/owner/owner_wallet/controller/owner_wallet_controller.dart';

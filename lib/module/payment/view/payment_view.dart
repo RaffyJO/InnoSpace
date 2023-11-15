@@ -24,7 +24,7 @@ class PaymentView extends StatefulWidget {
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
-              height: 300,
+              height: 330,
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -90,13 +90,42 @@ class PaymentView extends StatefulWidget {
                       ],
                     ),
                     const SizedBox(height: 5),
-                    const Column(
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Room"),
-                        Text(
-                          "Outdoor cafe: 4 seats, 1 tables",
-                          style: TextStyle(fontWeight: FontWeight.w600),
+                        const Text(
+                          "Tables",
+                          style: TextStyle(
+                            fontSize: 18.0,
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            const Text(
+                              "2 (4 sheets)",
+                              style: TextStyle(
+                                fontSize: 17.0,
+                              ),
+                            ),
+                            Checkbox(
+                              value: controller.isSelectedt,
+                              onChanged: controller.onChangedt,
+                            ),
+                            const SizedBox(
+                              width: 30,
+                            ),
+                            const Text(
+                              "4 (8 sheets)",
+                              style: TextStyle(
+                                fontSize: 17.0,
+                              ),
+                            ),
+                            Checkbox(
+                              value: controller.isSelectedt2,
+                              onChanged: controller.onChangedt2,
+                            )
+                          ],
                         ),
                       ],
                     ),
