@@ -53,12 +53,19 @@ class ListProductView extends StatefulWidget {
                             Padding(
                               padding: const EdgeInsets.only(
                                   left: 5, right: 10, top: 5, bottom: 5),
-                              child: Image.asset(
-                                products.imgUrl,
-                                width: 50.0,
-                                height: 50.0,
-                                fit: BoxFit.cover,
-                              ),
+                              child: Image.network(products.imgUrl,
+                                  width: 50.0, height: 50.0, fit: BoxFit.cover,
+                                  errorBuilder: (BuildContext context,
+                                      Object exception,
+                                      StackTrace? stackTrace) {
+                                print('Error: $exception');
+                                return Image.asset(
+                                  "assets/aset/image_not_found.jpg",
+                                  width: 50.0,
+                                  height: 50.0,
+                                  fit: BoxFit.cover,
+                                );
+                              }),
                             ),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -154,12 +161,19 @@ class ListProductView extends StatefulWidget {
                             Padding(
                               padding: const EdgeInsets.only(
                                   left: 5, right: 10, top: 5, bottom: 5),
-                              child: Image.asset(
-                                products.imgUrl,
-                                width: 50.0,
-                                height: 50.0,
-                                fit: BoxFit.cover,
-                              ),
+                              child: Image.network(products.imgUrl,
+                                  width: 50.0, height: 50.0, fit: BoxFit.cover,
+                                  errorBuilder: (BuildContext context,
+                                      Object exception,
+                                      StackTrace? stackTrace) {
+                                print('Error: $exception');
+                                return Image.asset(
+                                  "assets/aset/image_not_found.jpg",
+                                  width: 50.0,
+                                  height: 50.0,
+                                  fit: BoxFit.cover,
+                                );
+                              }),
                             ),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,

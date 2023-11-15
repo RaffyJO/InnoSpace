@@ -22,12 +22,14 @@ var productsList = [
       description: "Minuman teh yang enak dan murah",
       availability: true,
       type: "drink",
-      imgUrl: "assets/aset/Minuman.webp"),
+      imgUrl:
+          "https://tse4.mm.bing.net/th?id=OIP.xvt2lWaYcogBz_ejBfR8zwHaHa&pid=Api&P=0&h=180"),
   Products(
       name: "Ayam Geprek",
       price: 15000,
       description: "Ayam Geprek enak banget",
       availability: false,
       type: "food",
-      imgUrl: "assets/aset/AyamGeprek.png"),
+      imgUrl:
+          "https://4.bp.blogspot.com/-JgNfUwMgqRw/VbjRmRPIdLI/AAAAAAAAEcE/NflHjdGXKS4/s1600/IMG_3660.JPG"),
 ];

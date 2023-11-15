@@ -26,5 +26,6 @@ var spaceList = [
       description:
           "If you love to be outside maybe this type of place match with you",
       table: 1,
-      imgUrl: "assets/aset/fotoCafe.png"),
+      imgUrl:
+          "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiqG_nmnBisGx3RnRJBp3ZjU0Ae8X9bhBtYTTVUHZDGEVFVp1xl9p4sBh5gVUSE9EiNd5zXjvV_PGDU4-zKPrPsz8Orw60eqxGW7np3kDz7bmB4myFO-CopbLoMSP5nrZe4JxpD37zDBWcV47eWVdy1WR8VaKK5yhoYRkPnM5Ruo_QPCyLRJPAvuWy5/s16000/cafe%20di%20suhat%20malang.jpg"),
 ];

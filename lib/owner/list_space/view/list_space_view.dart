@@ -49,12 +49,20 @@ class ListSpaceView extends StatefulWidget {
                           children: [
                             ClipRRect(
                               borderRadius: BorderRadius.circular(20),
-                              child: Image.asset(
-                                space.imgUrl,
-                                width: MediaQuery.of(context).size.width,
-                                height: MediaQuery.of(context).size.width / 2,
-                                fit: BoxFit.cover,
-                              ),
+                              child: Image.network(space.imgUrl,
+                                  width: MediaQuery.of(context).size.width,
+                                  height: MediaQuery.of(context).size.width / 2,
+                                  fit: BoxFit.cover, errorBuilder:
+                                      (BuildContext context, Object exception,
+                                          StackTrace? stackTrace) {
+                                print('Error: $exception');
+                                return Image.asset(
+                                  "assets/aset/image_not_found.jpg",
+                                  width: MediaQuery.of(context).size.width,
+                                  height: MediaQuery.of(context).size.width / 2,
+                                  fit: BoxFit.cover,
+                                );
+                              }),
                             ),
                             Align(
                               alignment: Alignment.center,

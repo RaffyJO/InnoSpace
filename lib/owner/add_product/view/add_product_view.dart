@@ -37,10 +37,9 @@ class AddProductView extends StatefulWidget {
                   top: 15, bottom: 15, left: 15, right: 15),
               child: QImagePicker(
                 label: "Photo",
-                // validator: Validator.required,
                 value: null,
                 onChanged: (value) {
-                  // controller.photo = (value);
+                  controller.imgUrl = (value);
                 },
               ),
             ),
@@ -57,17 +56,27 @@ class AddProductView extends StatefulWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const TextField(
-                        // controller: _namaController,
-                        decoration: InputDecoration(
+                      TextField(
+                        decoration: const InputDecoration(
                             labelText: 'Product Name',
                             hintText: "Masukkan Nama Produk..."),
+                        onChanged: (value) {
+                          controller.nama = (value);
+                        },
                       ),
-                      const TextField(
-                        decoration: InputDecoration(
+                      TextField(
+                        decoration: const InputDecoration(
                           labelText: 'Price',
                           hintText: "Masukkan Harga...",
                         ),
+                        onChanged: (value) {
+                          int? parsedValue = int.tryParse(value);
+                          if (parsedValue != null) {
+                            controller.price = parsedValue;
+                          } else {
+                            print("Error: Nilai tidak valid");
+                          }
+                        },
                         keyboardType: TextInputType.number,
                       ),
                       const SizedBox(
@@ -83,7 +92,7 @@ class AddProductView extends StatefulWidget {
                         onSelected: (String? value) {
                           // This is called when the user selects an item.
                           AddProductController.instance.setState(() {
-                            dropdownValue = value!;
+                            controller.type = value!;
                           });
                         },
                         dropdownMenuEntries: listCategory
@@ -107,7 +116,7 @@ class AddProductView extends StatefulWidget {
                         onSelected: (String? value) {
                           // This is called when the user selects an item.
                           AddProductController.instance.setState(() {
-                            dropdownValue2 = value!;
+                            controller.availability = value!;
                           });
                         },
                         dropdownMenuEntries: listStock
@@ -118,11 +127,14 @@ class AddProductView extends StatefulWidget {
                           );
                         }).toList(),
                       ),
-                      const TextField(
+                      TextField(
                         // controller: _namaController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                             labelText: 'Description',
                             hintText: "Masukkan Deskripsi..."),
+                        onChanged: (value) {
+                          controller.description = value;
+                        },
                       ),
                     ],
                   )
@@ -139,7 +151,7 @@ class AddProductView extends StatefulWidget {
                     minimumSize: const Size(400, 40),
                   ),
                   onPressed: () {
-                    Navigator.pop(context);
+                    controller.saveProduct();
                   },
                   child: const Text(
                     "Save",
