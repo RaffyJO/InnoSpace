@@ -64,7 +64,7 @@ class BookingPageView extends StatefulWidget {
                       ),
                       const SizedBox(height: 7),
                       Text(
-                        order.id,
+                        "Order Id ${order.id}",
                         style: TextStyle(color: Colors.grey[700]),
                       ),
                       const SizedBox(
@@ -122,9 +122,7 @@ class BookingPageView extends StatefulWidget {
                                 const Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("- Kopi"),
-                                Text("- Nasi Macan"),
-                                Text("- Thai Tea"),
+                                Text("- Nasi Goreng"),
                               ],
                             ),
                           ),
@@ -134,31 +132,9 @@ class BookingPageView extends StatefulWidget {
                             child: const Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("x2"),
-                                Text("x3"),
-                                Text("x1"),
+                                Text("x5"),
                               ],
                             ),
-                          ),
-                          Expanded(
-                            child: Align(
-                                alignment: Alignment.bottomRight,
-                                child: Container(
-                                  height: 20,
-                                  width: 90,
-                                  decoration: const BoxDecoration(
-                                      color: Color.fromRGBO(255, 175, 0, 50),
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(5))),
-                                  child: const Center(
-                                    child: Text(
-                                      "In Progress",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w700,
-                                          fontSize: 13),
-                                    ),
-                                  ),
-                                )),
                           ),
                           // ElevatedButton(
                           //   onPressed: () {},
@@ -176,6 +152,29 @@ class BookingPageView extends StatefulWidget {
                           //   ),
                           // ),
                         ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 3),
+                        child: Expanded(
+                          child: Align(
+                              alignment: Alignment.bottomRight,
+                              child: Container(
+                                height: 20,
+                                width: 90,
+                                decoration: const BoxDecoration(
+                                    color: Color.fromRGBO(255, 175, 0, 50),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(5))),
+                                child: const Center(
+                                  child: Text(
+                                    "In Progress",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 13),
+                                  ),
+                                ),
+                              )),
+                        ),
                       ),
                     ],
                   ),
