@@ -104,7 +104,7 @@ class DatadiriView extends StatefulWidget {
                                   ),
                                   TextFormField(
                                     textInputAction: TextInputAction.done,
-                                    obscureText: true,
+                                    obscureText: false,
                                     cursorColor:
                                         const Color.fromRGBO(255, 175, 0, 50),
                                     decoration: const InputDecoration(
