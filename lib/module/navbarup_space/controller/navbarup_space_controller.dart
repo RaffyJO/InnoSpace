@@ -49,7 +49,7 @@ class NavbarupSpaceController extends State<NavbarupSpaceView> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     const Text(
-                      "         Public Gold Marketing Sdn",
+                      "         Jl. Soekarno Hatta, Kota Malang",
                       style: TextStyle(
                         fontSize: 14.0,
                       ),
@@ -79,8 +79,8 @@ class NavbarupSpaceController extends State<NavbarupSpaceView> {
                         height: double.infinity,
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(16.0),
-                          child: Image.network(
-                            "https://emas2u.com/wp-content/uploads/2019/02/public-gold-sunway-map.png",
+                          child: Image.asset(
+                            "assets/aset/map.JPG",
                             fit: BoxFit.cover,
                           ),
                         ),

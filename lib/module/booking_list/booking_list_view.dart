@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:innospace/module/payment/view/payment_view.dart';
 import 'package:innospace/core.dart';
+import 'package:innospace/entities/order.dart';
 
 class BookingListView extends StatefulWidget {
   const BookingListView({super.key});
@@ -43,12 +43,13 @@ class _BookingListViewState extends State<BookingListView> {
         ],
       ),
       body: ListView.builder(
-          itemCount: 3,
+          itemCount: orderList.length,
           itemBuilder: (context, index) {
+            Order order = orderList[index];
             return Padding(
               padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
               child: Container(
-                height: 220,
+                height: 260,
                 width: MediaQuery.of(context).size.width,
                 decoration: const BoxDecoration(
                   color: Colors.white,
@@ -69,9 +70,9 @@ class _BookingListViewState extends State<BookingListView> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
-                            "InnoCafe",
-                            style: TextStyle(fontWeight: FontWeight.w700),
+                          Text(
+                            order.storeType,
+                            style: const TextStyle(fontWeight: FontWeight.w700),
                           ),
                           Container(
                             height: 15,
@@ -80,10 +81,10 @@ class _BookingListViewState extends State<BookingListView> {
                                 color: Colors.red[100],
                                 borderRadius:
                                     const BorderRadius.all(Radius.circular(5))),
-                            child: const Center(
+                            child: Center(
                               child: Text(
-                                "Pending",
-                                style: TextStyle(
+                                order.orderStatus,
+                                style: const TextStyle(
                                     color: Colors.red,
                                     fontSize: 10,
                                     fontWeight: FontWeight.w500),
@@ -94,31 +95,80 @@ class _BookingListViewState extends State<BookingListView> {
                       ),
                       const SizedBox(height: 7),
                       Text(
-                        "Order Id 10043464289",
+                        "Order Id ${order.id}",
                         style: TextStyle(color: Colors.grey[700]),
                       ),
                       const SizedBox(
                         height: 2,
                       ),
-                      const Text(
-                        "Piskip",
-                        style: TextStyle(fontWeight: FontWeight.w700),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            order.storeName,
+                            style: const TextStyle(fontWeight: FontWeight.w700),
+                          ),
+                          Text(
+                            order.paymentStatus ? "Lunas" : "Belum Lunas",
+                            style: const TextStyle(fontWeight: FontWeight.w700),
+                          ),
+                        ],
                       ),
                       const Divider(
                         color: Colors.black, // Warna garis
                         thickness: 1.0, // Ketebalan garis
                       ),
-                      const Row(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("5 Oct 2023"),
-                          Text("16.30 - 17.30"),
+                          Text(order.date),
+                          Text("${order.startTime} - ${order.endTime}"),
                         ],
                       ),
                       const SizedBox(
                         height: 2,
                       ),
-                      const Text("1 Room (4 Seats)"),
+                      Text("${order.room} Table (${order.chair} Seats)"),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      const Text(
+                        "Orders",
+                      ),
+                      const SizedBox(
+                        height: 2,
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.only(left: 8, right: 5),
+                            child:
+                                // ListView.builder(
+                                //     itemCount: order.orders.length,
+                                //     itemBuilder: (context, index) {
+                                //       Text(order.orderStatus);
+                                //       return null;
+                                //     })
+                                const Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("- Nasi Goreng"),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            width: 120,
+                            margin: const EdgeInsets.only(left: 5, right: 5),
+                            child: const Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("x5"),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                       const SizedBox(
                         height: 7,
                       ),
@@ -129,9 +179,9 @@ class _BookingListViewState extends State<BookingListView> {
                       const SizedBox(
                         height: 2,
                       ),
-                      const Text(
-                        "5 Oct 2023 - 16:30:00",
-                        style: TextStyle(color: Colors.blue),
+                      Text(
+                        order.paymentStatus ? " -" : "",
+                        style: const TextStyle(color: Colors.blue),
                       ),
                       const SizedBox(
                         height: 7,
@@ -155,14 +205,17 @@ class _BookingListViewState extends State<BookingListView> {
                           ),
                           ElevatedButton(
                             onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) {
-                                    return const PaymentView();
-                                  },
-                                ),
-                              );
+                              if (order.paymentStatus) {
+                              } else {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return const PaymentView();
+                                    },
+                                  ),
+                                );
+                              }
                             },
                             style: ElevatedButton.styleFrom(
                               fixedSize: const Size(150, 40),
@@ -172,9 +225,9 @@ class _BookingListViewState extends State<BookingListView> {
                                 borderRadius: BorderRadius.circular(5),
                               ),
                             ),
-                            child: const Text(
-                              "Payment",
-                              style: TextStyle(color: Colors.black),
+                            child: Text(
+                              order.paymentStatus ? "Done" : "Payment",
+                              style: const TextStyle(color: Colors.black),
                             ),
                           ),
                         ],

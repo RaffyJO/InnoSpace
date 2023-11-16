@@ -31,7 +31,7 @@ class PaymentView extends StatefulWidget {
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
-              height: 330,
+              height: 370,
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -93,6 +93,46 @@ class PaymentView extends StatefulWidget {
                         Text(
                           "Start 16:00 WIB, end 18.00 WIB",
                           style: TextStyle(fontSize: 13),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    const Text(
+                      "Orders",
+                    ),
+                    const SizedBox(
+                      height: 2,
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.only(left: 8, right: 5),
+                          child:
+                              // ListView.builder(
+                              //     itemCount: order.orders.length,
+                              //     itemBuilder: (context, index) {
+                              //       Text(order.orderStatus);
+                              //       return null;
+                              //     })
+                              const Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("- Nasi Goreng"),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          width: 120,
+                          margin: const EdgeInsets.only(left: 5, right: 5),
+                          child: const Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("x5"),
+                            ],
+                          ),
                         ),
                       ],
                     ),

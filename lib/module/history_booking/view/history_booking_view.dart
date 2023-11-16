@@ -26,7 +26,7 @@ class HistoryBookingView extends StatefulWidget {
         centerTitle: true,
       ),
       body: ListView.builder(
-          itemCount: 4,
+          itemCount: 1,
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
@@ -94,8 +94,8 @@ class HistoryBookingView extends StatefulWidget {
                       const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("5 Oct 2023"),
-                          Text("16.30 - 17.30"),
+                          Text("1 Oct 2023"),
+                          Text("11.30 - 13.30"),
                         ],
                       ),
                       const SizedBox(

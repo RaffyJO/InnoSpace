@@ -9,6 +9,7 @@ class Order {
   String endTime;
   int room;
   int chair;
+  String storeName;
   Map<String, int> orders;
 
   Order(
@@ -22,7 +23,8 @@ class Order {
       required this.endTime,
       required this.room,
       required this.chair,
-      required this.orders});
+      required this.orders,
+      required this.storeName});
 }
 
 var orderList = [
@@ -30,6 +32,7 @@ var orderList = [
       id: "10043464289",
       storeType: "InnoCafe",
       custName: "Taylor Swift",
+      storeName: "Piskip",
       orderStatus: "Booked",
       paymentStatus: true,
       date: "5 Oct 2023",

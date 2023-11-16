@@ -107,7 +107,8 @@ class RegistrasiStoreView extends StatefulWidget {
         ),
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
-            // Tambahkan fungsi yang ingin dijalankan ketika FAB ditekan
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => OwnerDashboardView()));
           },
           backgroundColor: const Color.fromRGBO(255, 175, 0, 50),
           label: const Text(
