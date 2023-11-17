@@ -57,14 +57,14 @@ class UserProfileView extends StatefulWidget {
                       backgroundColor: Colors.white,
                       radius: 50.0,
                       backgroundImage: AssetImage(
-                        "assets/aset/taylor.png",
+                        "assets/aset/budi.jpg",
                       ),
                     ),
                     const SizedBox(
                       height: 15,
                     ),
                     const Text(
-                      "Taylor Swift",
+                      "Ahmad Budi",
                       style: TextStyle(fontWeight: FontWeight.w600),
                     ),
                   ],

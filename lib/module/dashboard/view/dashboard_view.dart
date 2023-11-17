@@ -66,7 +66,7 @@ class DashboardView extends StatefulWidget {
                           const EdgeInsets.only(top: 15, left: 15, right: 15),
                       child: Container(
                         child: const Text(
-                          "Selamat Sore, Taylor Swift",
+                          "Selamat Sore, Ahmad Budi",
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 15.0,
